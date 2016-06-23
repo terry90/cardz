@@ -1,9 +1,11 @@
-def create_users(nb = 10)
+def new_users(nb = 10)
 
   puts 'Creating users...'
-  nb.times do
-    User.create(email: Faker::Internet.email, password: SecureRandom.hex(8))
+  ar = []
+  nb.times do |i|
+    ar << User.new(email: Faker::Internet.email, password: SecureRandom.hex(8))
     print '.'
   end
   puts
+  ar
 end

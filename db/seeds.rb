@@ -11,7 +11,7 @@ require_relative 'seeds/cards'
 require_relative 'seeds/locations'
 require_relative 'seeds/businesses'
 
-create_users
 create_businesses
 create_locations
-create_users
+users = new_users
+create_cards(users)
