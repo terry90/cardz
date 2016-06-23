@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160623133307) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.integer  "user_id",     null: false
+    t.integer  "user_id"
     t.integer  "location_id", null: false
     t.string   "uid",         null: false
     t.datetime "created_at",  null: false
