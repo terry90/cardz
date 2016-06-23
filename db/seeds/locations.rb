@@ -1,5 +1,5 @@
 def create_locations(nb = 10)
-  puts 'Creating locations...'
+  puts '- Creating locations -'
   nb.times do
     raise 'Create businesses first' unless Business.count != 0
 

@@ -1,11 +1,10 @@
-def new_users(nb = 10)
+def create_users(nb = 10)
+  raise 'Create cards first' unless Card.count != 0
 
-  puts 'Creating users...'
-  ar = []
-  nb.times do |i|
-    ar << User.new(email: Faker::Internet.email, password: SecureRandom.hex(8))
+  puts '- Creating users -'
+  nb.times do
+    User.create!(email: Faker::Internet.email, password: SecureRandom.hex(8), cards: [Card.order('RANDOM()').first])
     print '.'
   end
   puts
-  ar
 end
