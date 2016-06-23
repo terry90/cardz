@@ -10,18 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623115420) do
+ActiveRecord::Schema.define(version: 20160623133307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cards", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.string   "uid",        null: false
+  create_table "businesses", force: :cascade do |t|
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "location_id", null: false
+    t.string   "uid",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["location_id"], name: "index_cards_on_location_id", using: :btree
     t.index ["uid"], name: "index_cards_on_uid", using: :btree
     t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.float    "lat",         null: false
+    t.float    "lng",         null: false
+    t.string   "name",        null: false
+    t.integer  "business_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["business_id"], name: "index_locations_on_business_id", using: :btree
+    t.index ["lat"], name: "index_locations_on_lat", using: :btree
+    t.index ["lng"], name: "index_locations_on_lng", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
