@@ -35,6 +35,7 @@ gem 'redis', '~> 3.0'
 
 # Authentication
 gem 'devise', '~> 4.1.1'
+gem 'devise-i18n'
 
 # Async Jobs
 gem 'sidekiq', '~> 4.1.2'
@@ -56,6 +57,9 @@ group :development, :test do
 end
 
 group :development do
+  # Opens email in browser
+  gem 'letter_opener', '~> 1.4.1'
+  # Generate graph for your DB
   gem 'rails-erd'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
