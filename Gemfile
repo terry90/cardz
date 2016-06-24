@@ -43,7 +43,7 @@ gem 'sidekiq', '~> 4.1.2'
 # Form view helpers
 gem 'formtastic', '~> 3.1.4'
 
-group :test do
+group :development, :test do
   # Testing framework
   gem 'rspec-rails', '= 3.5.0.beta4'
   # Automatic rspec -- BEGIN
@@ -58,10 +58,7 @@ group :test do
 
   # Fixtures
   gem 'factory_girl_rails', '~> 4.7'
-end
-
-group :development, :test do
-  # Fake data
+ # Fake data
   gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

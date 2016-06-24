@@ -1,0 +1,14 @@
+<%= semantic_form_for @offer_reduction do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :percent %>
+    <%= f.input :uid %>
+    <%= f.input :location %>
+    <%= f.input :description %>
+    <%= f.input :title %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>
