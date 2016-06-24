@@ -4,6 +4,9 @@
     <%= devise_error_messages! %>
     <%= form.inputs do %>
         <%= form.input :email, input_html: { autofocus: true } %>
+        <%= form.semantic_fields_for :cards_attributes do |card_f| %>
+          <%= card_f.input :uid %>
+        <% end %>
         <%= form.actions do %>
             <%= form.action :submit, label: 'Sign up' %>
         <% end %>

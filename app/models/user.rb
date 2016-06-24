@@ -6,8 +6,9 @@ class User < ApplicationRecord
 
   has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: 'default/user_avatar.png'
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/, size: { in: 0..2.megabytes }
-  has_many :cards
 
+  has_many :cards
+  accepts_nested_attributes_for :cards
   validates_presence_of :cards
 
   # We ask the password only after email confirmation (progressive engagement)
