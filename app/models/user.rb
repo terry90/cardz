@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :cards
-  #validates_presence_of :cards
+  validates_presence_of :cards
+
+  accepts_nested_attributes_for :cards
 
   def password_required?
     super if confirmed?
