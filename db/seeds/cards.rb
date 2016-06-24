@@ -3,7 +3,7 @@ def create_cards(nb = 200)
 
   puts '- Creating cards -'
   nb.times do |i|
-    Card.create!(uid: SecureRandom.hex(8), location: Location.order('RANDOM()').first)
+    Card.create!(location: Location.order('RANDOM()').first)
     print '.'
   end
   puts
