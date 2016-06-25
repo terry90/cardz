@@ -42,6 +42,8 @@ gem 'sidekiq', '~> 4.1.2'
 
 # Form view helpers
 gem 'formtastic', '~> 3.1.4'
+# Dynamically add/remove has_many records
+gem 'cocoon'
 
 # Image processing
 gem 'paperclip', '~> 5.0.0.beta2'

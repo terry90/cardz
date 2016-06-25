@@ -4,9 +4,12 @@
         <%= f.input :email %>
     <% end %>
 
-    <%= f.inputs name: 'Cards', for: :cards do |cards_f| %>
-        <%= cards_f.input :uid %>
+    <%= f.semantic_fields_for :cards do |card| %>
+        <%= render 'card_fields', f: card %>
     <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add card', f, :cards %>
+    </div>
 
     <% if user.errors.any? %>
         <div id="error_explanation">

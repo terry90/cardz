@@ -43,8 +43,12 @@ class UsersController < ApplicationController
   #TODO: Multi cards handling
   def update
     respond_to do |format|
-      card = Card.where(uid: params[:user][:cards_attributes]['0'][:uid]).first rescue nil
-      @user.cards = [card] if card
+      cards = []
+      params[:user][:cards_attributes].each do |_, v|
+        card = Card.where(uid: v[:uid]).first
+        cards << card if card && v[:_destroy] == 'false'
+      end
+      @user.cards = cards.uniq
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
@@ -66,17 +70,17 @@ class UsersController < ApplicationController
   end
 
   private
-    def ensure_user_has_rights
-      redirect_to root_path unless current_user && current_user == @user
-    end
+  def ensure_user_has_rights
+    redirect_to root_path unless current_user && current_user == @user
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.fetch(:user, {}).permit(:email)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.fetch(:user, {}).permit(:email)
+  end
 end
