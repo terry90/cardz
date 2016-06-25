@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_user_has_rights
 
   # GET /users
   # GET /users.json
@@ -39,8 +40,11 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
+  #TODO: Multi cards handling
   def update
     respond_to do |format|
+      card = Card.where(uid: params[:user][:cards_attributes]['0'][:uid]).first rescue nil
+      @user.cards = [card] if card
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
@@ -62,6 +66,10 @@ class UsersController < ApplicationController
   end
 
   private
+    def ensure_user_has_rights
+      redirect_to root_path unless current_user && current_user == @user
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
