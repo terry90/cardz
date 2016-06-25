@@ -1,22 +1,26 @@
 <%= semantic_form_for(user) do |f| %>
 
-  <%= f.inputs do %>
-    <%= f.input :email %>
-  <% end %>
+    <%= f.inputs do %>
+        <%= f.input :email %>
+    <% end %>
 
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, 'error') %> prohibited this user from being saved:</h2>
+    <%= f.inputs name: 'Cards', for: :cards do |cards_f| %>
+        <%= cards_f.input :uid %>
+    <% end %>
 
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <% if user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user.errors.count, 'error') %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
