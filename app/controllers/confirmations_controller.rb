@@ -1,6 +1,5 @@
 class ConfirmationsController < Devise::ConfirmationsController
   def show
-    @confir
     self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token]) if params[:confirmation_token].present?
     super if resource.nil? or resource.confirmed?
   end
@@ -15,7 +14,9 @@ class ConfirmationsController < Devise::ConfirmationsController
       render action: 'show'
     end
   end
+
   private
+
   def permitted_params
     params.require(resource_name).permit(:confirmation_token, :password, :password_confirmation)
   end
