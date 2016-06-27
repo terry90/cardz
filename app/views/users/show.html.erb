@@ -1,3 +1,16 @@
-<%= @user.email %>
+<p>
+  <%= t('user.show.completion', percentage: @user.completion_percentage) %>
+</p>
+
+<ul>
+  <li><%= @user.email %></li>
+  <li><%= @user.first_name %></li>
+  <li><%= @user.last_name %></li>
+  <li><%= @user.address %></li>
+  <li><%= @user.postal_code %></li>
+  <li><%= @user.city %></li>
+  <li><%= @user.phone_number %></li>
+</ul>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

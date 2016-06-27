@@ -10,6 +10,8 @@ fr:
       success: "Votre compte a été créé avec succès."
     destroy:
       success: "Votre compte a été supprimé avec succès"
+    show:
+      completion: "Votre profil est complété à %{percentage}%."
   card:
     add: "Ajouter une carte"
     remove: "Supprimer une carte"

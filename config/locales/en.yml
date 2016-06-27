@@ -32,6 +32,8 @@ en:
       success: "Your account has been successfully created."
     destroy:
       success: "User was successfully destroyed."
+    show:
+      completion: "Your profile is completed at %{percentage}%."
   card:
     add: "Add a card"
     remove: "Remove a card"
