@@ -1,0 +1,26 @@
+fr:
+  user:
+    update:
+      submit: "Mettre à jour mon profil"
+      title: "Votre profil"
+      success: "Votre profil a été mis à jour avec succès"
+    profile:
+      title: "Mon profil"
+    create:
+      success: "Votre compte a été créé avec succès."
+    destroy:
+      success: "Votre compte a été supprimé avec succès"
+  card:
+    add: "Ajouter une carte"
+    remove: "Supprimer une carte"
+
+  activerecord:
+    attributes:
+      user:
+        email: 'Email'
+        first_name: 'Prénom'
+        last_name: 'Nom'
+        address: 'Adresse'
+        postal_code: 'Code postal'
+        city: 'Ville'
+        phone_number: 'Téléphone'

@@ -21,3 +21,28 @@
 
 en:
   hello: "Hello world"
+  user:
+    update:
+      success: "Your profile has been successfully updated."
+      title: "Votre profil"
+      submit: "Update my profile"
+    profile:
+      title: "Your profile"
+    create:
+      success: "Your account has been successfully created."
+    destroy:
+      success: "User was successfully destroyed."
+  card:
+    add: "Add a card"
+    remove: "Remove a card"
+
+  activerecord:
+    attributes:
+      user:
+        email: 'Email'
+        first_name: 'First name'
+        last_name: 'Last name'
+        address: 'Address'
+        postal_code: 'Postal code'
+        city: 'City'
+        phone_number: 'Phone number'

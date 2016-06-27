@@ -14,7 +14,7 @@
         <%= render 'card_fields', f: card %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association 'Add card', f, :cards %>
+      <%= link_to_add_association t('card.add'), f, :cards %>
     </div>
 
     <% if user.errors.any? %>
@@ -30,6 +30,6 @@
     <% end %>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit t('user.update.submit') %>
     </div>
 <% end %>
