@@ -19,4 +19,10 @@ class User < ApplicationRecord
     self.errors[:password_confirmation] << 'does not match password' if password != password_confirmation
     password == password_confirmation && !password.blank?
   end
+
+  def completion_percentage
+    fields = %w(email first_name last_name address postal_code city phone_number cards)
+    sum_add = 100.0 / fields.count
+    fields.inject(0) { |sum, field| sum + (field.split('.').inject(self) { |us, o| us.send(o) }.blank? ? 0 : sum_add) }.round.to_i
+  end
 end
