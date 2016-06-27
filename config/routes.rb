@@ -3,7 +3,7 @@ Rails.application.routes.draw do
                                     registrations: 'users/registrations' }
 
   devise_scope :user do
-    patch '/confirm' => 'confirmations#confirm'
+    patch '/confirm' => 'users/confirmations#confirm'
   end
 
   resources :locations

@@ -2,6 +2,12 @@
 
     <%= f.inputs do %>
         <%= f.input :email %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :address %>
+        <%= f.input :postal_code %>
+        <%= f.input :city %>
+        <%= f.input :phone_number %>
     <% end %>
 
     <%= f.semantic_fields_for :cards do |card| %>
