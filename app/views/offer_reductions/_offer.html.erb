@@ -1,4 +1,7 @@
-<div class="card">
+<div class="ui card offer <%= position %>">
+  <span class="ui left corner label">
+    <i class="icon eye white"></i>
+  </span>
   <div class="image">
     <%= image_tag 'tmp/chateau_queribus.jpg' %>
   </div>
@@ -6,7 +9,7 @@
     <div class="header"><%= offer.name %></div>
     <div class="meta">
       <span>
-        <%= fa_icon 'clock-o' %>
+    <i class="icon clock"></i>
         3 jours restants</span>
     </div>
     <div class="description">
@@ -15,7 +18,7 @@
   </div>
   <div class="extra content">
       <span>
-        <%= fa_icon 'user' %>
+    <i class="icon user"></i>
         22 bénéficiaires
       </span>
   </div>

@@ -1,3 +1,16 @@
 // Place all the styles related to the offer_reductions controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//TODO: Remove
+@import "globals";
+
+.card {
+  //TODO: Better way to do this ?
+  &.mauto-lr {
+    margin: 20px auto 20px auto;
+  }
+  .corner.label {
+    color: $cardz-green;
+  }
+}

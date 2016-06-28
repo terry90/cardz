@@ -52,7 +52,9 @@ gem 'paperclip', '~> 5.0.0.beta2'
 gem 'aws-sdk', '~> 2.3'
 
 # Semantic UI
-gem 'semantic-ui-sass', '~> 2.2'
+gem 'less-rails-semantic_ui'
+gem 'autoprefixer-rails'
+gem 'therubyracer'
 
 # Font Awesome
 gem 'font-awesome-rails'
