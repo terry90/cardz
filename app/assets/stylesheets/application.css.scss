@@ -10,75 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require semantic_ui/semantic_ui
+ *= require_tree .
  */
 
-@import "semantic-ui";
-
-$cardz_green: #5DCC75;
-$cardz_purple: #A23BC5;
-
-.space-b { margin-bottom: 10px }
-.space-l { margin-left: 10px }
-.space-r { margin-right: 10px }
-.space-t { margin-top: 10px }
-.lspace-r { margin-right: 20px }
-.lspace-l { margin-left: 20px }
-.lspace-t { margin-top: 20px }
-.lspace-b { margin-bottom: 20px }
-.xlspace-l { margin-left: 30px }
-.xlspace-r { margin-right: 30px }
-.xlspace-b { margin-bottom: 30px }
-.xlspace-t { margin-top: 30px }
-.xxlspace-t { margin-top: 50px }
-.xxlspace-b { margin-bottom: 50px }
-.xxlspace-l { margin-left: 40px }
-.xxlspace-r { margin-right: 40px }
-.no-space { margin: 0 }
-.no-space-b { margin-bottom: 0 }
-.no-space-t { margin-top: 0 }
-.no-space-l { margin-left: 0 }
-.no-space-r { margin-bottom: 0 }
-.p-top { padding-top: 20px }
-.p-bot { padding-bottom: 20px }
-.p-left { padding-left: 20px }
-.p-right { padding-right: 20px }
-.lp-bot { padding-bottom: 30px }
-.lp-top { padding-top: 30px }
-.lp-right { padding-right: 30px }
-.lp-left { padding-left: 30px }
-
-.clear { clear: both }
-.left { float: left }
-.right { float: right }
-.w50 { width: 50% }
-.w100 { width: 100% }
-.center { text-align: center }
-.white { color: white }
-
-body {
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.banner {
-  height: 400px;
-}
-
-.w50-button {
-  height: 50px;
-  line-height: 50px;
-  cursor: pointer;
-  color: white;
-  text-decoration: none;
-
-  &.offers-button {
-    background-color: $cardz_green;
-  }
-
-  &.locations-button {
-    background-color: $cardz_purple;
-  }
-}
+@import "globals";
