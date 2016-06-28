@@ -10,6 +10,13 @@
   &.mauto-lr {
     margin: 20px auto 20px auto;
   }
+
+  .content {
+    &.xlp-left {
+      padding-left: 40px;
+    }
+  }
+
   .corner.label {
     color: $cardz-green;
   }
