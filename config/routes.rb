@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     patch '/confirm' => 'users/confirmations#confirm'
   end
 
-  resources :locations
+  resources :locations do
+    resources :offer_reductions
+  end
+
   resources :businesses
   resources :cards
   resources :users
-  resources :offer_reductions
   root 'home#index'
 end

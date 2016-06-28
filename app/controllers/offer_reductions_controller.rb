@@ -1,10 +1,11 @@
 class OfferReductionsController < ApplicationController
+  before_action :set_location, only: [:index]
   before_action :set_offer_reduction, only: [:show, :edit, :update, :destroy]
 
   # GET /offer_reductions
   # GET /offer_reductions.json
   def index
-    @offer_reductions = OfferReduction.all
+    @offer_reductions = @location.offer_reductions
   end
 
   # GET /offer_reductions/1
@@ -65,6 +66,10 @@ class OfferReductionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_offer_reduction
       @offer_reduction = OfferReduction.find(params[:id])
+    end
+
+    def set_location
+      @location = Location.find(params[:location_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

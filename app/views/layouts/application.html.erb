@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cardz</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Cardz</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <div class="flashes">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
-    <%= yield %>
-  </body>
+</head>
+
+<body>
+<div class="header no-space">
+  <div class="banner w100">
+    <%= image_tag 'tmp/chateau_val.jpg', class: 'w100 banner' %>
+  </div>
+  <%= link_to t('offers.see_all'), '#', class: 'left w50 center w50-button offers-button' %>
+  <%= link_to t('locations.see_all'), '#', class: 'left w50 center w50-button locations-button' %>
+</div>
+<div class="clear"></div>
+
+<div class="flashes">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>
+<%= yield %>
+</body>
 </html>

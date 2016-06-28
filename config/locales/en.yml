@@ -48,3 +48,7 @@ en:
         postal_code: 'Postal code'
         city: 'City'
         phone_number: 'Phone number'
+  offers:
+    see_all: "See all the offers"
+  locations:
+    see_all: "See the partner locations"
