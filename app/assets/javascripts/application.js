@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require cocoon
 //= require semantic_ui/semantic_ui
+//= require shapeshift/jquery.shapeshift
 //= require_tree .
