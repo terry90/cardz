@@ -66,12 +66,15 @@ group :development, :test do
 
   # Fixtures
   gem 'factory_girl_rails', '~> 4.7'
- # Fake data
+  # Env variables
+  gem 'dotenv-rails'
+end
+
+group :development, :staging, :test do
+  # Fake data
   gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  # Env variables
-  gem 'dotenv-rails'
 end
 
 group :development do
