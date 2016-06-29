@@ -70,6 +70,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def ensure_user_has_rights
     redirect_to root_path unless current_user && current_user == @user
   end
