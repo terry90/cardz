@@ -12,5 +12,8 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "cardz_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  Mail.register_interceptor RecipientInterceptor.new(ENV.fetch('EMAIL_RECIPIENTS') { 'dev@dartagnans.fr' })
+  Mail.register_interceptor RecipientInterceptor.new(
+    ENV.fetch('EMAIL_RECIPIENTS') { 'dev@dartagnans.fr' },
+    subject_prefix: '[STAGING]'
+  )
 end
