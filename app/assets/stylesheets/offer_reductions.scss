@@ -5,20 +5,20 @@
 //TODO: Remove
 @import "globals";
 
-.card {
-  //TODO: Better way to do this ?
-  &.mauto-lr {
-    margin: 20px auto 20px auto;
-  }
+.cards-container {
+  position: relative;
+  width: 100%;
 
-  .content {
-    &.xlp-left {
-      padding-left: 40px;
+  .ui.card {
+    &:first-child {
+      margin-top: 1em;
     }
-  }
 
-  .ui.corner.label {
-    color: $cardz-green;
-    border-color: $cardz-green;
+    position: absolute;
+
+    .ui.corner.label {
+      color: $cardz-green;
+      border-color: $cardz-green;
+    }
   }
 }

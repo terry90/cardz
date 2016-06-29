@@ -2,16 +2,10 @@
   <h1><%= @location.name %></h1>
 
   <!--TODO: Align vertically cards-->
-  <% @offer_reductions.each_with_index do |offer, i| %>
-      <% case i % 3 %>
-      <% when 0 %>
-          <% position = 'left' %>
-      <% when 1 %>
-          <% position = 'right' %>
-      <% else %>
-          <% position = 'mauto-lr' %>
-      <% end %>
-      <%= render 'offer_small', offer: offer, position: position %>
-  <% end %>
-  <div class="clear"></div>
+  <div class="cards-container">
+    <% @offer_reductions.each_with_index do |offer| %>
+        <%= render (Random.rand(2) % 2 == 0 ? 'offer_small' : 'offer'), offer: offer %>
+    <% end %>
+    <div class="clear"></div>
+  </div>
 </div>
