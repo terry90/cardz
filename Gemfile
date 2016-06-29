@@ -70,7 +70,7 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-group :development, :staging, :test do
+group  :staging, :development, :test do
   # Fake data
   gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
