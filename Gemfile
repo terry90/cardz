@@ -51,6 +51,10 @@ gem 'paperclip', '~> 5.0.0.beta2'
 # AWS SDK :)
 gem 'aws-sdk', '~> 2.3'
 
+group :staging do
+  gem 'recipient_interceptor'
+end
+
 group :development, :test do
   # Testing framework
   gem 'rspec-rails', '= 3.5.0.beta4'
