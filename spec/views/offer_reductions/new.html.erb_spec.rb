@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "offer_reductions/new", type: :view do
   before(:each) do
+    skip 'Code me maybe'
     assign(:offer_reduction, OfferReduction.new(
       :name => "MyString",
       :percent => 1,

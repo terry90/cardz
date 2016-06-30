@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "cards/index", type: :view do
   before(:each) do
+    skip 'Code me maybe'
     assign(:cards, [
       Card.create!(),
       Card.create!()

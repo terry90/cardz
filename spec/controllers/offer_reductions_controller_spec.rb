@@ -20,6 +20,8 @@ require 'rails_helper'
 
 RSpec.describe OfferReductionsController, type: :controller do
 
+  before { skip 'Code me maybe' }
+
   # This should return the minimal set of attributes required to create a valid
   # OfferReduction. As you add validations to OfferReduction, be sure to
   # adjust the attributes here as well.

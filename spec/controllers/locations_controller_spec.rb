@@ -20,6 +20,10 @@ require 'rails_helper'
 
 RSpec.describe LocationsController, type: :controller do
 
+  let(:skip_me) { skip('Code me maybe') }
+
+  before(:each) { skip_me }
+
   # This should return the minimal set of attributes required to create a valid
   # Location. As you add validations to Location, be sure to
   # adjust the attributes here as well.

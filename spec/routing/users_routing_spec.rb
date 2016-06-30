@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.describe UsersController, type: :routing do
+  before { skip 'Code me maybe' }
+
   describe "routing" do
 
     it "routes to #index" do

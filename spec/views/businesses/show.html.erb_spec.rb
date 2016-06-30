@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "businesses/show", type: :view do
   before(:each) do
+    skip 'Code me maybe'
     @business = assign(:business, Business.create!())
   end
 

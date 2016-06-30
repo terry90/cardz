@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "cards/edit", type: :view do
   before(:each) do
+    skip 'Code me maybe'
     @card = assign(:card, Card.create!())
   end
 
