@@ -59,6 +59,10 @@ gem 'therubyracer'
 # Font Awesome
 gem 'font-awesome-rails'
 
+group :staging do
+  gem 'recipient_interceptor'
+end
+
 group :development, :test do
   # Testing framework
   gem 'rspec-rails', '= 3.5.0.beta4'
@@ -74,12 +78,15 @@ group :development, :test do
 
   # Fixtures
   gem 'factory_girl_rails', '~> 4.7'
- # Fake data
+  # Env variables
+  gem 'dotenv-rails'
+end
+
+group  :staging, :development, :test do
+  # Fake data
   gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  # Env variables
-  gem 'dotenv-rails'
 end
 
 group :development do

@@ -6,6 +6,7 @@ RSpec.describe "locations/edit", type: :view do
   end
 
   it "renders the edit location form" do
+    skip 'Code me maybe'
     render
 
     assert_select "form[action=?][method=?]", location_path(@location), "post" do
