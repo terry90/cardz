@@ -33,8 +33,6 @@ RSpec.describe CardsController, type: :routing do
 
     it 'routes to #destroy' do
       expect(delete: '/cards/1').to route_to('cards#destroy', id: '1')
->>>>>>> [C]
     end
-
   end
 end

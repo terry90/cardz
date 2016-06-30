@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "offer_reductions/index", type: :view do
   before(:each) do
+    skip('Code me maybe')
     assign(:offer_reductions, [
       OfferReduction.create!(
         :name => "Name",
