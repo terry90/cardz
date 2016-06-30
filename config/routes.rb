@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :offer_reductions
   end
 
+  resources :offer_reductions, only: [:index]
   resources :businesses
   resources :cards
   resources :users
