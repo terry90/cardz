@@ -53,10 +53,7 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-
-  # Use a real queuing backend for Active Job (and separate queues per environment)
-  # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "cardz_#{Rails.env}"
+  # TODO think about redis store (don't forget to calculate the time cost (~50ms for redis) - calculation (Xms))
   config.action_mailer.perform_caching = false
 
   config.action_mailer.delivery_method = :smtp
