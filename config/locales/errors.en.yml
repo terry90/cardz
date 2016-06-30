@@ -1,0 +1,4 @@
+en:
+  errors:
+    card:
+      inexistent: Please type a valid card number
