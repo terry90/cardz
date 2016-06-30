@@ -1,3 +1,10 @@
-<div>
-  Rails 5 is awesome
+<div class="container">
+  <div class="user-form">
+    <%= @errors %>
+    <label for="email">E-mail</label>
+    <input name="email" type="email" placeholder="E-mail">
+    <div class="check-email btn" data-url="<%= user_preform_url %>">
+      Valider
+    </div>
+  </div>
 </div>

@@ -10,6 +10,8 @@
 </head>
 
 <body>
+
+<% if true # TODO move in another layout %>
 <div class="header no-space">
   <div class="banner w100" style="background: url('<%= image_url('tmp/chateau_val.jpg') %>') no-repeat center fixed; -webkit-background-size: cover; background-size: cover;">
   </div>
@@ -17,6 +19,7 @@
   <%= link_to t('locations.see_all'), '#', class: 'left w50 center w50-button locations-button' %>
 </div>
 <div class="clear"></div>
+<% end # TODO ---------------------------- %>
 
 <div class="flashes">
   <p class="notice"><%= notice %></p>

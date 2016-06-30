@@ -10,8 +10,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # POST /resource
 # TODO: i18n
   def create
-    card = Card.where(uid: params[:user][:cards_attributes][:uid])
-    flash[:error] = 'No card found with this id' unless card
+    card = Card.where(uid: params[:user][:cards_attributes][:uid], user: nil)
+    flash[:error] = t('errors.card.inexistent') unless card
     build_resource(sign_up_params)
     resource.cards << card if card
     resource.save
@@ -28,7 +28,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       set_minimum_password_length
-      respond_with resource
+      @errors = resource.errors.full_messages
+      render 'home/index'
     end
   end
 

@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   end
 
   resources :locations do
-    resources :offer_reductions
+    resources :offer_reductions # TODO abstract offer_reductions to offers
   end
 
   resources :businesses
   resources :cards
   resources :users
+  post '/user/preform', to: 'users#preform', as: :user_preform
   root 'home#index'
 end
