@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require cocoon
-//= require semantic_ui/semantic_ui
+//= require bootstrap-sprockets
 //= require shapeshift/jquery.shapeshift
 //= require_tree .

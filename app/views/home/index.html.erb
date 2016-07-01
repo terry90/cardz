@@ -1,10 +1,10 @@
 <div class="container home">
   <div class="user-form">
     <%= @errors %>
-    <div class="ui action input">
+    <div class="home-form">
       <input name="email" type="email" placeholder="E-mail">
-      <button class="ui icon button check-email" data-url="<%= user_preform_url %>">
-        <i class="search icon"></i>
+      <button class="button check-email ribbon" data-url="<%= user_preform_url %>">
+        <%= fa_icon 'search' %>
       </button>
     </div>
   </div>

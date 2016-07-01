@@ -52,13 +52,11 @@ gem 'paperclip', '~> 5.0.0.beta2'
 # AWS SDK :)
 gem 'aws-sdk', '~> 2.3'
 
-# Semantic UI
-gem 'less-rails-semantic_ui'
-gem 'autoprefixer-rails'
-gem 'therubyracer'
-
 # Font Awesome
 gem 'font-awesome-rails'
+
+# Bootstrap
+gem 'bootstrap-sass'
 
 group :staging do
   gem 'recipient_interceptor'

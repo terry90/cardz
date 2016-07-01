@@ -10,7 +10,7 @@ landingForm = ->
       url: $(this).data('url'),
       data: { email: $("input[name=email]").val() },
       success:(data) ->
-        $('.user-form').html(data)
+        $('.home-form').html(data)
       error:(data) ->
         alert('SOUS MERDE') # TODO error
         return false
