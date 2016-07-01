@@ -69,8 +69,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def preform # Will replace the form on homepage
-    # Try to find an existing user
+  # Will replace the form on homepage
+  # Try to find an existing user
+  def preform
     @user = User.find_by(email: params[:email]) || User.new(email: params[:email])
     render partial: @user.persisted? ? 'form_password' : 'form_card_uid'
   end

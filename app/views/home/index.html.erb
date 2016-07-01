@@ -1,10 +1,11 @@
-<div class="container">
+<div class="container home">
   <div class="user-form">
     <%= @errors %>
-    <label for="email">E-mail</label>
-    <input name="email" type="email" placeholder="E-mail">
-    <div class="check-email btn" data-url="<%= user_preform_url %>">
-      Valider
+    <div class="ui action input">
+      <input name="email" type="email" placeholder="E-mail">
+      <button class="ui icon button check-email" data-url="<%= user_preform_url %>">
+        <i class="search icon"></i>
+      </button>
     </div>
   </div>
 </div>

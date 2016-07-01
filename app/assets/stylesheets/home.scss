@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-  background-color: #51d2ff;
+.home {
+  &.container {
+    background: url(image_path('tmp/chateau_val.jpg')) no-repeat fixed;
+    background-size: cover;
+    display: table;
+    height: 100%;
+    width: 100%;
+
+    .user-form {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
 }

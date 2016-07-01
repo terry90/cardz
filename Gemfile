@@ -42,6 +42,7 @@ gem 'sidekiq', '~> 4.1.2'
 
 # Form view helpers
 gem 'formtastic', '~> 3.1.4'
+gem 'simple_form'
 # Dynamically add/remove has_many records
 gem 'cocoon'
 

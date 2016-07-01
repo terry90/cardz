@@ -1,12 +1,10 @@
-<div class="user-form">
-  <%= semantic_form_for(resource, as: :user, url: user_registration_path(resource)) do |form| %>
-    <%= devise_error_messages! %>
-    <%= form.input :email, as: :hidden, value: @user.email %>
-    <%= form.semantic_fields_for :cards_attributes do |card_f| %>
-      <%= card_f.input :uid, input_html: { autofocus: true } %>
-    <% end %>
-    <%= form.actions do %>
-      <%= form.action :submit, label: 'Sign up' %>
-    <% end %>
-  <% end %>
-</div>
+<%= simple_form_for(resource, url: user_registration_path(resource)) do |f| %>
+    <!--TODO: Handle errors-->
+    <%= f.input :email, as: :hidden, value: @user.email %>
+    <div class="ui action input">
+      <%= f.simple_fields_for :cards_attributes do |card_f| %>
+          <%= card_f.input :uid, wrapper: false, label: false, input_html: { autofocus: true } %>
+      <% end %>
+      <%= f.button :submit, value: 'Sign up', class: 'ui icon button' %>
+    </div>
+<% end %>

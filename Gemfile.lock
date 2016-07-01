@@ -264,6 +264,9 @@ GEM
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       redis (~> 3.2, >= 3.2.1)
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     slop (3.6.0)
     spring (1.7.1)
     spring-watcher-listen (2.0.0)
@@ -339,6 +342,7 @@ DEPENDENCIES
   rspec-support (= 3.5.0.beta4)
   sass-rails (~> 5.0)
   sidekiq (~> 4.1.2)
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   therubyracer
