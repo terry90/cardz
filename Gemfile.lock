@@ -49,6 +49,12 @@ GEM
     aws-sdk-resources (2.3.16)
       aws-sdk-core (= 2.3.16)
     bcrypt (3.1.11)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -299,6 +305,8 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   aws-sdk (~> 2.3)
+  better_errors
+  binding_of_caller
   bootstrap-sass (~> 3.3.6)
   byebug
   cocoon

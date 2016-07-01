@@ -100,4 +100,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors' # Better 500 page
+  gem 'binding_of_caller' # Inspection of varz, linked to better_errors
 end
