@@ -2,7 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-landingForm = -> # Render the correct form depending on the email address (password for existing accounts, else card UID)
+# Render the correct form depending on the email address (password for existing accounts, else card UID)
+landingForm = ->
   $('.check-email').click(() ->
     $.ajax({
       type: "POST",
@@ -11,7 +12,7 @@ landingForm = -> # Render the correct form depending on the email address (passw
       success:(data) ->
         $('.user-form').html(data)
       error:(data) ->
-        alert('SOUS MERDE')
+        alert('SOUS MERDE') # TODO error
         return false
     })
   )

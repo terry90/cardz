@@ -28,6 +28,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       set_minimum_password_length
+
+      # The preform is located at home index for now
       @errors = resource.errors.full_messages
       render 'home/index'
     end
