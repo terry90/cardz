@@ -51,6 +51,8 @@ en:
         postal_code: 'Postal code'
         city: 'City'
         phone_number: 'Phone number'
+      card:
+        uid: "Card number"
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"
@@ -58,6 +60,10 @@ en:
           has_one: "Cannot delete record because a dependent %{record} exists"
           has_many: "Cannot delete record because dependent %{record} exist"
       models:
+        card:
+          attributes:
+            uid:
+              invalid: 'Votre carte est invalide'
         user:
           attributes:
             email:

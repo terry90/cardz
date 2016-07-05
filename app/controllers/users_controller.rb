@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_user_has_rights, except: :preform
+  before_action :ensure_user_has_rights, except: [:preform, :check_card]
 
   # GET /users
   # GET /users.json
@@ -74,6 +74,16 @@ class UsersController < ApplicationController
   def preform
     @user = User.find_by(email: params[:email]) || User.new(email: params[:email])
     render partial: @user.persisted? ? 'form_password' : 'form_card_uid'
+  end
+
+  # Check if card is valid and not taken
+  def check_card
+    @card = Card.where(uid: params[:card], user_id: nil).first
+    if @card
+      head :ok
+    else
+      head :forbidden
+    end
   end
 
   private

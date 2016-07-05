@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :users
 
   post '/user/preform', to: 'users#preform', as: :user_preform
+  post '/user/check_cards', to: 'users#check_card', as: :user_check_card
 
   root 'home#index'
 end

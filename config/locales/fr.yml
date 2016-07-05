@@ -29,6 +29,8 @@ fr:
         postal_code: 'Code postal'
         city: 'Ville'
         phone_number: 'Téléphone'
+      card:
+        uid: "Numéro de carte"
     errors:
       messages:
         record_invalid: 'La validation a échouée : %{errors}'
@@ -36,6 +38,10 @@ fr:
           has_one: "Vous ne pouvez pas supprimer l'enregistrement car une personne à charge %{record} existe"
           has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
       models:
+        card:
+          attributes:
+            uid:
+              invalid: 'Votre carte est invalide'
         user:
           attributes:
             email:
