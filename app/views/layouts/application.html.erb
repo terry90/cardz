@@ -6,22 +6,9 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
 </head>
 
 <body>
-<div class="header no-space">
-  <div class="banner w100" style="background: url('<%= image_url('tmp/chateau_val.jpg') %>') no-repeat center fixed; -webkit-background-size: cover; background-size: cover;">
-  </div>
-  <%= link_to t('offers.see_all'), '#', class: 'left w50 center w50-button offers-button' %>
-  <%= link_to t('locations.see_all'), '#', class: 'left w50 center w50-button locations-button' %>
-</div>
-<div class="clear"></div>
-
-<div class="flashes">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-</div>
 <%= yield %>
 </body>
 </html>

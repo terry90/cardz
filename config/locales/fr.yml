@@ -29,8 +29,14 @@ fr:
         postal_code: 'Code postal'
         city: 'Ville'
         phone_number: 'Téléphone'
+      card:
+        uid: "Numéro de carte"
     errors:
       models:
+        card:
+          attributes:
+            uid:
+              invalid: 'Votre carte est invalide'
         user:
           attributes:
             email:

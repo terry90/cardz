@@ -51,8 +51,14 @@ en:
         postal_code: 'Postal code'
         city: 'City'
         phone_number: 'Phone number'
+      card:
+        uid: "Card number"
     errors:
       models:
+        card:
+          attributes:
+            uid:
+              invalid: 'Votre carte est invalide'
         user:
           attributes:
             email:
