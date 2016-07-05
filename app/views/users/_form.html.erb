@@ -1,35 +1,33 @@
-<%= semantic_form_for(user) do |f| %>
+<%= simple_form_for(user) do |f| %>
 
-    <%= f.inputs do %>
-        <%= f.input :email %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :address %>
-        <%= f.input :postal_code %>
-        <%= f.input :city %>
-        <%= f.input :phone_number %>
-    <% end %>
+  <%= f.input :email %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :address %>
+  <%= f.input :postal_code %>
+  <%= f.input :city %>
+  <%= f.input :phone_number %>
 
-    <%= f.semantic_fields_for :cards do |card| %>
-        <%= render 'card_fields', f: card %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association t('card.add'), f, :cards %>
+  <%= f.simple_fields_for :cards do |card| %>
+    <%= render 'card_fields', f: card %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association t('card.add'), f, :cards %>
+  </div>
+
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, 'error') %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
+  <% end %>
 
-    <% if user.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(user.errors.count, 'error') %> prohibited this user from being saved:</h2>
-
-          <ul>
-            <% user.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
-    <div class="actions">
-      <%= f.submit t('user.update.submit') %>
-    </div>
+  <div class="actions">
+    <%= f.submit t('user.update.submit') %>
+  </div>
 <% end %>
