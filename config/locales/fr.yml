@@ -30,3 +30,13 @@ fr:
     see_all: "Voire toutes les offres"
   locations:
     see_all: "Voir les lieux partenaires"
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'Votre email est invalide'
+            cards:
+              blank: 'Votre carte est invalide'

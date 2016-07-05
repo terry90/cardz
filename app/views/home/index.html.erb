@@ -1,8 +1,7 @@
 <div class="container home">
   <div class="user-form">
-    <%= @errors %>
     <div class="home-form">
-      <input name="email" type="email" placeholder="E-mail">
+      <input name="email" type="email" placeholder="E-mail" data-toggle=popover data-trigger=manual data-placement=bottom data-content="<%= "<p>#{@errors.join('<br>')}</p>" if @errors %>">
       <button class="button check-email ribbon" data-url="<%= user_preform_url %>">
         <%= fa_icon 'search' %>
       </button>

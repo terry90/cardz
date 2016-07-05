@@ -16,5 +16,7 @@ landingForm = ->
         return false
     })
   )
+  $('[data-toggle="popover"]').popover({ html: true })
+  $('[data-toggle="popover"]').popover('show')
 
 $(document).on('turbolinks:load', landingForm)

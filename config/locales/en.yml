@@ -52,3 +52,13 @@ en:
     see_all: "See all the offers"
   locations:
     see_all: "See the partner locations"
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'Your email is invalid'
+            cards:
+              blank: 'Your card is invalid'

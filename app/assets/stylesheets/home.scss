@@ -44,6 +44,23 @@
         color: white;
       }
 
+      .popover {
+        background-color: #DB2828;
+
+        .arrow:after {
+          border-bottom-color: #DB2828;
+        }
+
+        .popover-content {
+          color: white;
+          word-wrap: break-word;
+
+          p {
+            margin: 10px;
+          }
+        }
+      }
+
       .ribbon {
         position: absolute;
         top: 0;
