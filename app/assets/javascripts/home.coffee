@@ -65,5 +65,4 @@ landingForm = ->
         $(this).removeClass('hidden')
       )
   )
-
 $(document).on('turbolinks:load', landingForm)
