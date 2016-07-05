@@ -37,7 +37,10 @@ en:
   card:
     add: "Add a card"
     remove: "Remove a card"
-
+  offers:
+    see_all: "See all the offers"
+  locations:
+    see_all: "See the partner locations"
   activerecord:
     attributes:
       user:
@@ -48,7 +51,11 @@ en:
         postal_code: 'Postal code'
         city: 'City'
         phone_number: 'Phone number'
-  offers:
-    see_all: "See all the offers"
-  locations:
-    see_all: "See the partner locations"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'Your email is invalid'
+            cards:
+              blank: 'Your card is invalid'

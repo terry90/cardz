@@ -1,16 +1,12 @@
-<h2>Sign up</h2>
-
 <%= semantic_form_for(resource, as: :user, url: user_registration_path(resource)) do |form| %>
-    <%= devise_error_messages! %>
-    <%= form.inputs do %>
-        <%= form.input :email, input_html: { autofocus: true } %>
-        <%= form.semantic_fields_for :cards_attributes do |card_f| %>
-          <%= card_f.input :uid %>
-        <% end %>
-        <%= form.actions do %>
-            <%= form.action :submit, label: 'Sign up' %>
-        <% end %>
-    <% end %>
+  <%= devise_error_messages! %>
+  <%= form.input :email, as: :hidden %>
+  <%= form.semantic_fields_for :cards_attributes do |card_f| %>
+    <%= card_f.input :uid, input_html: { autofocus: true } %>
+  <% end %>
+  <%= form.actions do %>
+    <%= form.action :submit, label: 'Sign up' %>
+  <% end %>
 <% end %>
 
 <%= render 'devise/shared/links' %>

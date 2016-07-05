@@ -1,0 +1,11 @@
+<%= simple_form_for(resource, url: user_registration_path(resource)) do |f| %>
+    <!--TODO: Handle errors-->
+    <%= f.input :email, as: :hidden, value: @user.email %>
+    <%= f.simple_fields_for :cards_attributes do |card_f| %>
+        <%= card_f.input :uid, wrapper: false, label: false, input_html: { autofocus: true } %>
+    <% end %>
+
+    <%= button_tag type: :submit, class: 'ribbon button' do %>
+        <%= fa_icon 'search' %>
+    <% end %>
+<% end %>

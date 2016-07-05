@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   resources :businesses
   resources :cards
   resources :users
+
+  post '/user/preform', to: 'users#preform', as: :user_preform
+
   root 'home#index'
 end

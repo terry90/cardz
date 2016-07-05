@@ -1,0 +1,4 @@
+fr:
+  errors:
+    card:
+      inexistent: Merci de préciser un numéro de carte valide

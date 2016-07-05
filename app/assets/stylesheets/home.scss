@@ -1,3 +1,79 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "globals";
+
+.home {
+  &.container {
+    background: url(image_path('tmp/chateau_val.jpg')) no-repeat fixed;
+    background-size: cover;
+    display: table;
+    height: 100%;
+    width: 100%;
+
+    .user-form {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+
+      .home-form {
+        position: relative;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      input {
+        padding: 0 0 0 5px;
+        height: 45px;
+        width: 300px;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border: none;
+
+        &.ribbon {
+          border-radius: 0;
+        }
+      }
+
+      i {
+        position: relative;
+        top: 7px;
+        left: 25px;
+        color: white;
+      }
+
+      .popover {
+        background-color: #DB2828;
+
+        .arrow:after {
+          border-bottom-color: #DB2828;
+        }
+
+        .popover-content {
+          color: white;
+          word-wrap: break-word;
+
+          p {
+            margin: 10px;
+          }
+        }
+      }
+
+      .ribbon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 0;
+        width: 0;
+        border-right: 45px solid $ui_green;
+        border-bottom: 45px solid transparent;
+        border-top: 0;
+        border-left: 0;
+        background-color: transparent;
+        padding: 0;
+      }
+    }
+  }
+}

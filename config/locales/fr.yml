@@ -15,7 +15,10 @@ fr:
   card:
     add: "Ajouter une carte"
     remove: "Supprimer une carte"
-
+  offers:
+    see_all: "Voire toutes les offres"
+  locations:
+    see_all: "Voir les lieux partenaires"
   activerecord:
     attributes:
       user:
@@ -26,7 +29,11 @@ fr:
         postal_code: 'Code postal'
         city: 'Ville'
         phone_number: 'Téléphone'
-  offers:
-    see_all: "Voire toutes les offres"
-  locations:
-    see_all: "Voir les lieux partenaires"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'Votre email est invalide'
+            cards:
+              blank: 'Votre carte est invalide'

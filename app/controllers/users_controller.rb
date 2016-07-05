@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_user_has_rights
+  before_action :ensure_user_has_rights, except: :preform
 
   # GET /users
   # GET /users.json
@@ -67,6 +67,13 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: t('user.destroy.success') }
       format.json { head :no_content }
     end
+  end
+
+  # Will replace the form on homepage
+  # Try to find an existing user
+  def preform
+    @user = User.find_by(email: params[:email]) || User.new(email: params[:email])
+    render partial: @user.persisted? ? 'form_password' : 'form_card_uid'
   end
 
   private
