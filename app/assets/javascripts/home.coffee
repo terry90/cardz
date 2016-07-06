@@ -26,9 +26,9 @@ landingForm = ->
                 $('#new_user').unbind('submit').submit()
                 return true
               error:(data) ->
-                $('[data-toggle="popover"]').attr('data-content', $('[data-toggle="popover"]').data('error'))
-                $('[data-toggle="popover"]').popover({ html: true })
-                $('[data-toggle="popover"]').popover('show')
+                $('.error-popover').fadeIn(400, () ->
+                  $(this).removeClass('hidden')
+                )
                 return false
             })
           )
@@ -37,15 +37,9 @@ landingForm = ->
           return false
       })
     else
-      popover = $('[data-toggle="popover"]').data('bs.popover');
-
-      $('[data-toggle="popover"]').attr('data-content', $('[data-toggle="popover"]').data('error'))
-      popover.setContent();
-      popover.$tip.addClass(popover.options.placement)
-      $('[data-toggle="popover"]').popover('show')
+      $('.error-popover').fadeIn(400, () ->
+        $(this).removeClass('hidden')
+      )
   )
-
-  $('[data-toggle="popover"]').popover({ html: true })
-  $('[data-toggle="popover"]').popover('show')
 
 $(document).on('turbolinks:load', landingForm)

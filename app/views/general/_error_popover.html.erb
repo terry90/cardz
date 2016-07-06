@@ -1,0 +1,9 @@
+<% arrow ||= :up %>
+<% error ||= '' %>
+<% hidden ||= false %>
+
+<div class="error-popover <%= 'hidden' if hidden %> <%= arrow %>">
+  <p>
+    <%= error %>
+  </p>
+</div>
