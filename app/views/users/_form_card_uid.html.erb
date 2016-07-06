@@ -1,4 +1,4 @@
-<%= simple_form_for(resource, url: user_registration_path(resource), html: { 'data-url': user_check_card_url } ) do |f| %>
+<%= simple_form_for(resource, url: user_registration_path(resource), html: { 'data-url': user_check_card_path } ) do |f| %>
     <!--TODO: Handle errors-->
     <%= f.input :email, as: :hidden, value: @user.email %>
     <%= f.simple_fields_for :cards_attributes do |card_f| %>

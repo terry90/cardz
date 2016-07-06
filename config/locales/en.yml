@@ -34,6 +34,8 @@ en:
       success: "User was successfully destroyed."
     show:
       completion: "Your profile is completed at %{percentage}%."
+    errors:
+      invalid_credentials: "Either your email or your password is incorrect"
   card:
     add: "Add a card"
     remove: "Remove a card"

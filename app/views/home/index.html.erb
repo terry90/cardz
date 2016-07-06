@@ -1,11 +1,7 @@
 <div class="container home">
   <div class="user-form">
     <div class="home-form">
-      <input class="email-input" name="email" type="email" placeholder="E-mail">
-      <button class="button check-email ribbon" data-url="<%= user_preform_url %>">
-        <%= fa_icon 'search' %>
-      </button>
-      <%= render 'general/error_popover', error: t('activerecord.errors.models.user.attributes.email.invalid'), arrow: :up, hidden: true %>
+      <%= render 'form_email' %>
     </div>
   </div>
 </div>
