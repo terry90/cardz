@@ -34,6 +34,7 @@
 .xlp-right { padding-right: 40px }
 .xlp-left { padding-left: 40px }
 
+.hidden { display: none }
 .clear { clear: both }
 .left { float: left }
 .right { float: right }
@@ -55,7 +56,7 @@ body {
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
-  font-family: Lato, verdana, arial, helvetica, sans-serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .banner {
@@ -79,5 +80,27 @@ body {
 
   &.locations-button {
     background-color: $ui_purple;
+  }
+}
+
+.error-popover {
+  &.up {
+    @include arrow-top(#D92B2F, 10px, 20px);
+    margin-top: 15px;
+  }
+
+  &.down {
+    @include arrow-top(#D92B2F, 10px, 20px);
+    margin-bottom: 15px;
+  }
+
+  position: relative;
+  background-color: #D92B2F;
+  color: white;
+  border-radius: 5px;
+
+  p {
+    margin: 0;
+    padding: 10px;
   }
 }

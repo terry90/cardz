@@ -2,11 +2,10 @@
     <!--TODO: Handle errors-->
     <%= f.input :email, as: :hidden, value: @user.email %>
     <%= f.simple_fields_for :cards_attributes do |card_f| %>
-        <%= card_f.input :uid, placeholder: t('activerecord.attributes.card.uid'), wrapper: false, label: false,
-                         input_html: { autofocus: true, 'data-error': t('activerecord.errors.models.card.attributes.uid.invalid'), 'data-toggle': 'popover',
-                                       'data-trigger': 'manual', 'data-placement': 'bottom' } %>
+        <%= card_f.input :uid, placeholder: t('activerecord.attributes.card.uid'), wrapper: false, label: false, input_html: { autofocus: true } %>
     <% end %>
     <%= button_tag type: :submit, class: 'ribbon button' do %>
         <%= fa_icon 'search' %>
     <% end %>
+    <%= render 'general/error_popover', error: t('activerecord.errors.models.card.attributes.uid.invalid'), arrow: :up, hidden: true %>
 <% end %>
