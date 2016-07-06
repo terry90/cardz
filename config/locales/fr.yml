@@ -12,6 +12,8 @@ fr:
       success: "Votre compte a été supprimé avec succès"
     show:
       completion: "Votre profil est complété à %{percentage}%."
+    errors:
+      invalid_credentials: "Votre email ou votre mot de passe est invalide"
   card:
     add: "Ajouter une carte"
     remove: "Supprimer une carte"

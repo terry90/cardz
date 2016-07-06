@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_user_has_rights, except: [:preform, :check_card]
+  before_action :ensure_user_has_rights, except: [:preform, :check_card, :check_credentials]
 
   # GET /users
   # GET /users.json
@@ -83,6 +83,15 @@ class UsersController < ApplicationController
       head :ok
     else
       head :forbidden
+    end
+  end
+
+  def check_credentials
+    @user = User.where(email: params[:email]).first
+    if @user && @user.valid_password?(params[:password])
+      head :ok
+    else
+      head :unauthorized
     end
   end
 
