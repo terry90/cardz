@@ -290,6 +290,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   aws-sdk (~> 2.3)
   better_errors
   binding_of_caller
