@@ -53,6 +53,7 @@ en:
         postal_code: 'Postal code'
         city: 'City'
         phone_number: 'Phone number'
+        password: "Password"
       card:
         uid: "Card number"
     errors:
@@ -67,3 +68,8 @@ en:
               invalid: 'Your email is invalid'
             cards:
               blank: 'Your card is invalid'
+  home:
+    form:
+      email_tip:
+        email: "Email: %{email}"
+        change: "(change)"

@@ -31,6 +31,7 @@ fr:
         postal_code: 'Code postal'
         city: 'Ville'
         phone_number: 'Téléphone'
+        password: "Mot de passe"
       card:
         uid: "Numéro de carte"
     errors:
@@ -45,3 +46,8 @@ fr:
               invalid: 'Votre email est invalide'
             cards:
               blank: 'Votre carte est invalide'
+  home:
+    form:
+      email_tip:
+        email: "Email : %{email}"
+        change: "(changer)"
