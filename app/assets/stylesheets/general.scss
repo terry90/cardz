@@ -105,3 +105,27 @@ body {
     padding: 10px;
   }
 }
+
+.ribbon {
+  position: absolute;
+  color: white;
+  line-height: 18px;
+  top: 0;
+  right: 0;
+  height: 0;
+  width: 0;
+  border-right: 45px solid $ui_green;
+  border-bottom: 45px solid transparent;
+  border-top: 0;
+  border-left: 0;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+
+  i {
+    position: relative;
+    top: 7px;
+    left: 25px;
+    color: white;
+  }
+}
