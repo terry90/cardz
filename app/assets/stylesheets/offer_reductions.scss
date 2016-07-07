@@ -9,16 +9,7 @@
   position: relative;
   width: 100%;
 
-  .ui.card {
-    &:first-child {
-      margin-top: 1em;
-    }
-
-    position: absolute;
-
-    .ui.corner.label {
-      color: $ui_green;
-      border-color: $ui_green;
-    }
+  .card {
+   position: absolute;
   }
 }

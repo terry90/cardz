@@ -5,5 +5,7 @@
 $ ->
   $('.cards-container').shapeshift({
     enableDrag: false,
-    enableCrossDrop: false
+    enableCrossDrop: false,
+    gutterX: 50,
+    gutterY: 50
   });
