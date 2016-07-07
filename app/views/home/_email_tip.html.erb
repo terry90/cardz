@@ -1,0 +1,7 @@
+<% email ||= '' %>
+<% path ||= root_path %>
+
+<div class="email-tip">
+  <span class="email"><%= t('home.form.email_tip.email', email: "#{email[0...35]}#{'...' unless email[0...35] == email }") %></span>
+  <%= link_to t('home.form.email_tip.change'), path + "?email=#{email}", class: 'right' %>
+</div>

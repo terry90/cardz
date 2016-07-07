@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   post '/user/check_cards', to: 'users#check_card', as: :user_check_card
   post '/user/check_credentials', to: 'users#check_credentials', as: :user_check_credentials
 
+  get '/home/index', to: 'home#index'
+
   root 'home#index'
 end

@@ -1,11 +1,14 @@
-<%= simple_form_for(resource, url: user_registration_path(resource), html: { 'data-url': user_check_card_path } ) do |f| %>
-    <!--TODO: Handle errors-->
-    <%= f.input :email, as: :hidden, value: @user.email %>
-    <%= f.simple_fields_for :cards_attributes do |card_f| %>
-        <%= card_f.input :uid, placeholder: t('activerecord.attributes.card.uid'), wrapper: false, label: false, input_html: { autofocus: true } %>
-    <% end %>
-    <%= button_tag type: :submit, class: 'ribbon button' do %>
-        <%= fa_icon 'search' %>
-    <% end %>
-    <%= render 'general/error_popover', error: t('activerecord.errors.models.card.attributes.uid.invalid'), arrow: :up, hidden: true %>
-<% end %>
+<%= render 'home/email_tip', email: @user.email, path: root_path %>
+<div class="fields">
+  <%= simple_form_for(resource, url: user_registration_path(resource), html: { 'data-url': user_check_card_path } ) do |f| %>
+      <!--TODO: Handle errors-->
+      <%= f.input :email, as: :hidden, value: @user.email %>
+      <%= f.simple_fields_for :cards_attributes do |card_f| %>
+          <%= card_f.input :uid, placeholder: t('activerecord.attributes.card.uid'), wrapper: false, label: false, input_html: { autofocus: true } %>
+      <% end %>
+      <%= button_tag type: :submit, class: 'ribbon button' do %>
+          <%= fa_icon 'search' %>
+      <% end %>
+      <%= render 'general/error_popover', error: t('activerecord.errors.models.card.attributes.uid.invalid'), arrow: :up, hidden: true %>
+  <% end %>
+</div>
