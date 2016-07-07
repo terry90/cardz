@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   post '/user/check_cards', to: 'users#check_card', as: :user_check_card
   post '/user/check_credentials', to: 'users#check_credentials', as: :user_check_credentials
 
-  get '/home/index', to: 'home#index'
+  authenticated :user do
+    root to: 'locations#index', as: :authenticated_root
+  end
 
-  root 'home#index'
+  root 'home#index', as: :root
 end
