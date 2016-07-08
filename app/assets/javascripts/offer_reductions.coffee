@@ -6,6 +6,6 @@ $ ->
   $('.cards-container').shapeshift({
     enableDrag: false,
     enableCrossDrop: false,
-    gutterX: 50,
-    gutterY: 50
+    gutterX: 25,
+    gutterY: 25 # 2 small offers = 1 big offer with that magin
   });
