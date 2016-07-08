@@ -1,13 +1,15 @@
-<div class="card offer">
-  <button class="button ribbon" data-url="#">
-    <%= fa_icon 'eye' %>
-  </button>
-  <div class="image" style="background-image: url(<%= image_url('tmp/chateau_queribus.jpg') %>); background-size: cover">
-  </div>
-  <div class="footer">
-    <div class="title"><%= offer.name %></div>
-    <div class="subtitle"><%= fa_icon 'clock-o' %> 3 jours restans</div>
-    <div class="description"><%= offer.description %></div>
-    <div class="claimed"><%= fa_icon 'user' %> 22 bénéficiaires</div>
+<div>
+  <div class="card offer">
+    <button class="button ribbon" data-url="#">
+      <%= fa_icon 'eye' %>
+    </button>
+    <div class="image" style="background-image: url(<%= image_url('tmp/chateau_queribus.jpg') %>); background-size: cover">
+    </div>
+    <div class="footer">
+      <div class="title"><%= offer.name %></div>
+      <div class="subtitle"><%= fa_icon 'clock-o' %> 3 jours restans</div>
+      <div class="description"><%= offer.description %></div>
+      <div class="claimed"><%= fa_icon 'user' %> 22 bénéficiaires</div>
+    </div>
   </div>
 </div>

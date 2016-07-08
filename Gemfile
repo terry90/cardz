@@ -62,6 +62,9 @@ gem 'font-awesome-rails'
 # Auto-prefixer
 gem 'autoprefixer-rails'
 
+# UIKit
+gem 'uikit-sass-rails'
+
 group :staging do
   gem 'recipient_interceptor'
 end
