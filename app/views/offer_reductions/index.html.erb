@@ -8,7 +8,7 @@
   <!--TODO: Align vertically cards-->
   <div class="cards-container">
     <% @offer_reductions.each_with_index do |offer| %>
-        <%= render (Random.rand(2) % 2 == 0 ? 'offer' : 'offer'), offer: offer %>
+        <%= render (Random.rand(2) % 2 == 0 ? 'offer_small' : 'offer'), offer: offer %>
     <% end %>
     <div class="clear"></div>
   </div>
