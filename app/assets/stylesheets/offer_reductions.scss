@@ -6,10 +6,7 @@
 @import "globals";
 
 .cards-container {
-  position: relative;
-  width: 100%;
-
   .card {
-   position: absolute;
+    margin: 0 auto 25px auto;
   }
 }
