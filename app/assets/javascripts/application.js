@@ -16,4 +16,5 @@
 //= require cocoon
 //= require shapeshift/jquery.shapeshift
 //= require kube
+//= require uikit
 //= require_tree .
