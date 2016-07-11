@@ -97,6 +97,14 @@ group  :staging, :development, :test do
 end
 
 group :development do
+  # Thread
+  gem 'parallel'
+  # Talks about itself
+  gem 'ruby-progressbar'
+  # QR Code generator (pure ruby)
+  gem 'rqrcode'
+  # Image generator
+  gem 'chunky_png'
   # Opens email in browser
   gem 'letter_opener', '~> 1.4.1'
   # Generate graph for your DB
