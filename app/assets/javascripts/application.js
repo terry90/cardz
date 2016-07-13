@@ -11,10 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require cocoon
-//= require shapeshift/jquery.shapeshift
 //= require kube
-//= require uikit
+//= require uikit/uikit
+//= require uikit/grid
 //= require_tree .

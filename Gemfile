@@ -27,6 +27,8 @@ gem 'normalize-rails'
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'
+# Reload jquery when using turbolink
+gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -61,9 +63,6 @@ gem 'font-awesome-rails'
 
 # Auto-prefixer
 gem 'autoprefixer-rails'
-
-# UIKit
-gem 'uikit-sass-rails'
 
 group :staging do
   gem 'recipient_interceptor'

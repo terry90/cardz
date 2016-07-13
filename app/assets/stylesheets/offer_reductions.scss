@@ -6,7 +6,17 @@
 @import "globals";
 
 .cards-container {
+  text-align: left;
+
   .card {
     margin: 0 auto 25px auto;
   }
+}
+
+.after-load {
+  opacity: 0;
+}
+
+.cssload-thecube {
+  margin-top: 50px;
 }
