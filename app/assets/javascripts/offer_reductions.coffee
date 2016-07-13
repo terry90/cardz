@@ -2,10 +2,20 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
-#  $('.cards-container').shapeshift({
-#    enableDrag: false,
-#    enableCrossDrop: false,
-#    gutterX: 25,
-#    gutterY: 25 # 2 small offers = 1 big offer with that magin
-#  });
+loadGrid = ->
+  $('[data-uk-grid]').on('beforeupdate.uk.grid', (e, children) ->
+    setTimeout (->
+      $('.after-load').fadeTo(400, 0)
+      $('.cssload-thecube').fadeTo(400, 1)
+    ), 500
+  )
+
+  $('[data-uk-grid]').on('afterupdate.uk.grid', (e, children) ->
+    setTimeout (->
+      $('.after-load').fadeTo(400, 1)
+      $('.cssload-thecube').fadeTo(400, 0)
+    ), 500
+  )
+  UIkit.grid($('.cards-container'))
+
+$(document).on('turbolinks:load', loadGrid)
