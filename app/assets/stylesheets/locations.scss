@@ -1,3 +1,19 @@
 // Place all the styles related to the locations controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.location {
+  position: relative;
+  margin: 0 auto 25px auto;
+  width: 250px;
+  height: 150px;
+}
+
+.bottom-legend {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  background: rgba(0, 0, 0, 1);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(255, 255, 255, 0) 100%);
+}
