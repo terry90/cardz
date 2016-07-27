@@ -19,6 +19,7 @@ fr:
     remove: "Supprimer une carte"
   offers:
     see_all: "Voire toutes les offres"
+    offer_reduction: "Réductions"
   locations:
     see_all: "Voir les lieux partenaires"
   activerecord:

@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="full-width-weighted center xlspace-t">
-  <h1 class="after-load "><%= @location.name %></h1>
+  <h1 class="after-load "><%= @location ? @location.name : t('offers.offer_reduction') %></h1>
 
   <div class="cssload-thecube">
     <div class="cssload-cube cssload-c1"></div>
