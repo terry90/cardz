@@ -41,6 +41,7 @@ en:
     remove: "Remove a card"
   offers:
     see_all: "See all the offers"
+    offer_reduction: "Reductions"
   locations:
     see_all: "See the partner locations"
   activerecord:
