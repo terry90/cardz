@@ -1,10 +1,12 @@
 <div>
-  <%= link_to location_offer_reductions_path(location_id: location.id) do %>
+  <!--<%= link_to location_offer_reductions_path(location_id: location.id) do %>-->
     <div class="location" style="background-image: url(<%= image_url('tmp/chateau_queribus.jpg') %>); background-size: cover">
       <button class="button ribbon" data-url="#">
         <%= fa_icon 'eye' %>
       </button>
-      <div class="bottom-legend white"><%= location.name %></div>
+      <textarea class="redactor bottom-legend" <%= "id=#{id}" if id %> name="location[formatted_name]" data-url="<%= location_inline_update_path(id: location.id, format: :json) %>">
+        <%= raw location.formatted_name %>
+      </textarea>
     </div>
-  <% end %>
+  <!--<% end %>-->
 </div>

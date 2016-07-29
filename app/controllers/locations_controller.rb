@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: [:show, :edit, :update, :inline_update, :destroy]
 
   # GET /locations
   # GET /locations.json
@@ -51,6 +51,18 @@ class LocationsController < ApplicationController
     end
   end
 
+  # POST /locations/1/inline_update
+  # Should only called in AJAX
+  def inline_update
+    respond_to do |format|
+      if @location.update(location_params)
+        format.json { render :show, status: :ok, location: @location }
+      else
+        format.json { render json: @location.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # DELETE /locations/1
   # DELETE /locations/1.json
   def destroy
@@ -62,13 +74,13 @@ class LocationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_location
-      @location = Location.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_location
+    @location = Location.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def location_params
-      params.fetch(:location, {})
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def location_params
+    params.fetch(:location, {}  ).permit(:formatted_name)
+  end
 end
