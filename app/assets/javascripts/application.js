@@ -18,4 +18,5 @@
 //= require kube
 //= require uikit/uikit
 //= require uikit/grid
+//= require redactor
 //= require_tree .

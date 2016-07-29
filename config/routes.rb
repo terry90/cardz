@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   authenticated :user do
     root to: 'locations#index', as: :authenticated_root
 
+    post 'locations/:id/inline_update', to: 'locations#inline_update', as: :location_inline_update
+
     resources :locations do
       resources :offer_reductions
     end

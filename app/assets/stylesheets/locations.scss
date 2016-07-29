@@ -18,6 +18,22 @@
     font-size: 100px;
     font-weight: bold;
   }
+
+  .redactor-box {
+    height: 28px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    background: rgba(0, 0, 0, 1);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .redactor-editor {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
 }
 
 .cards-container {
@@ -26,11 +42,9 @@
   }
 }
 
-.bottom-legend {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  padding: 5px;
-  background: rgba(0, 0, 0, 1);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(255, 255, 255, 0) 100%);
+.redactor-dropdown-white {
+  background-color: gray;
+  span {
+    color: white;
+  }
 }
