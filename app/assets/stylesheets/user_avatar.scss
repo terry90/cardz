@@ -19,22 +19,22 @@
     border-radius: 4px;
 
     .menu {
-      a:hover {
-        background-color: transparent;
-      }
-
       li {
         position: relative;
         font-size: 1.3em;
-        font-weight: bold;
         padding: 6px 10px 6px 20px;
         margin: 20px 10px 20px -20px;
-        color: #555;
-        background-color: #999;
-        text-shadow: 0 1px 2px #bbb;
-        -webkit-box-shadow: 0 2px 4px #888;
-        -moz-box-shadow: 0 2px 4px #888;
+        background-color: #1CB5AC;
+        text-shadow: 0 1px 2px #2f2d2d;
         box-shadow: 0 2px 4px #888;
+
+        a {
+          color: white;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
       }
 
       li:after
@@ -47,8 +47,12 @@
         top: 100%;
         border-width: 5px 10px;
         border-style: solid;
-        border-color: #666 #666 transparent transparent;
+        border-color: #1b8781 #1b8781 transparent transparent;
       }
+    }
+
+    .uk-dropdown-grid>.notifications:nth-child(n+2) {
+      border-left: none;
     }
   }
 }
