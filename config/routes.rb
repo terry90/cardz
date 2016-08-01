@@ -26,4 +26,11 @@ Rails.application.routes.draw do
   end
 
   root 'home#index', as: :root
+
+  require 'sidekiq/web'
+
+  # TODO: Change autorizations
+  #authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  #end
 end
