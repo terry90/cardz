@@ -3,6 +3,7 @@ require_relative 'card_creation'
 namespace :cards do
   desc 'Generates visual identity of cards with QR codes (unique)'
   task generate: :environment do
+    raise '---- Run me in DEV env ----' unless Rails.env.development?
     cards_count = Card.count
     started_at = Time.now
 
