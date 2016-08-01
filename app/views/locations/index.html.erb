@@ -17,24 +17,4 @@
       <% end %>
     </div>
   </div>
-
-  <!--TODO: To coffee-->
-  <script type="text/javascript">
-    $(function()
-    {
-      $('.redactor').each(function() {
-        $(this).redactor({
-          air: true,
-          formattingAdd: {
-            "white": {
-              title: 'White',
-              args: ['p', { 'class': 'white' }]
-            }
-          },
-          autosave: $(this).data('url')
-        });
-      });
-      UIkit.grid($('.cards-container'));
-    });
-  </script>
 </div>
