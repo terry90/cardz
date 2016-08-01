@@ -1,2 +1,66 @@
 $ui_green: #5DCC75;
 $ui_purple: #A23BC5;
+
+// arrow top
+@mixin arrow-top($color: #fff, $size: 5px, $left: 5px) {
+  &:after {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: $color;
+    border-width: $size;
+    left: $left;
+  }
+}
+
+// arrow bottom
+@mixin arrow-bottom($color: #fff, $size: 5px, $left: 5px) {
+  &:after {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: $color;
+    border-width: $size;
+    left: $left;
+  }
+}
+
+// arrow left
+@mixin arrow-left($color: #fff, $size: 5px, $top: 5px) {
+  &:after {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: $color;
+    border-width: $size;
+    top: $top;
+  }
+}
+
+// arrow right
+@mixin arrow-right($color: #fff, $size: 5px, $top: 5px) {
+  &:after {
+    left: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-left-color: $color;
+    border-width: $size;
+    top: $top;
+  }
+}
