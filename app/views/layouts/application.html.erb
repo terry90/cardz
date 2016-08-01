@@ -9,11 +9,13 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
+<body>
 <% if content_for? :banner %>
     <%= yield :banner %>
 <% end %>
 
-<body>
 <%= yield %>
+
+<%= yield :javascript %>
 </body>
 </html>

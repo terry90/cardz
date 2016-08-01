@@ -1,0 +1,22 @@
+<script>
+  var loadGrid;
+  var grid = $('[data-uk-grid]');
+
+  loadGrid = function() {
+    grid.on('beforeupdate.uk.grid', function(e, children) {
+      setTimeout((function() {
+        $('.after-load').fadeTo(400, 0);
+        $('.cssload-thecube').fadeTo(400, 1);
+      }), 500);
+    });
+    grid.on('afterupdate.uk.grid', function(e, children) {
+      setTimeout((function() {
+        $('.after-load').fadeTo(400, 1);
+        $('.cssload-thecube').fadeTo(400, 0);
+      }), 500);
+    });
+    UIkit.grid($('.cards-container'));
+  };
+
+  $(document).on('turbolinks:load', loadGrid);
+</script>
