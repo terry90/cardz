@@ -93,6 +93,9 @@ group  :staging, :development, :test do
   gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # Required for the use of Sidekiq Web UI
+  gem 'sinatra', github: 'sinatra/sinatra'
+  gem 'rack-protection', github: 'sinatra/rack-protection'
 end
 
 group :development do
