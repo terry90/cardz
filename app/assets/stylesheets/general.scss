@@ -123,12 +123,14 @@ body {
 
 .error-popover {
   &.up {
-    @include arrow-top(#D92B2F, 10px, 20px);
+    //TODO: Without KUBE
+    //@include arrow-top(#D92B2F, 10px, 20px);
     margin-top: 15px;
   }
 
   &.down {
-    @include arrow-top(#D92B2F, 10px, 20px);
+    //TODO: Without KUBE
+    //@include arrow-top(#D92B2F, 10px, 20px);
     margin-bottom: 15px;
   }
 
