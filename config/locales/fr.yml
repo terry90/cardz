@@ -14,6 +14,8 @@ fr:
       completion: "Votre profil est complété à %{percentage}%."
     errors:
       invalid_credentials: "Votre email ou votre mot de passe est invalide"
+    cards:
+      title: "Mes cartes"
   card:
     add: "Ajouter une carte"
     remove: "Supprimer une carte"
@@ -52,3 +54,4 @@ fr:
       email_tip:
         email: "Email : %{email}"
         change: "(changer)"
+  sign_out: "Déconnexion"

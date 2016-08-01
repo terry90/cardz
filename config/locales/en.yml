@@ -36,6 +36,8 @@ en:
       completion: "Your profile is completed at %{percentage}%."
     errors:
       invalid_credentials: "Either your email or your password is incorrect"
+    cards:
+      title: "My cards"
   card:
     add: "Add a card"
     remove: "Remove a card"
@@ -74,3 +76,4 @@ en:
       email_tip:
         email: "Email: %{email}"
         change: "(change)"
+  sign_out: "Sign out"
