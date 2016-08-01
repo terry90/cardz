@@ -9,6 +9,7 @@
   margin: 0 auto 25px auto;
   width: 250px;
   height: 150px;
+  overflow: hidden;
 
   &.add {
     color: white;
@@ -20,7 +21,7 @@
   }
 
   .redactor-box {
-    height: 28px;
+    height: 18px;
     width: 100%;
     position: absolute;
     bottom: 0;

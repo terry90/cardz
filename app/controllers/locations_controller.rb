@@ -58,7 +58,7 @@ class LocationsController < ApplicationController
       if @location.update(location_params)
         format.json { render :show, status: :ok, location: @location }
       else
-        format.json { render json: @location.errors, status: :unprocessable_entity }
+        format.json { render json: { error: @location.errors }, status: :ok }
       end
     end
   end

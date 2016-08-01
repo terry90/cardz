@@ -11,9 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  *= require normalize-rails
- *= require kube
- *= require kube_mixins
- *= require uikit
+ *= require uikit/uikit.css
+ *= require uikit/notify.css
  *= require redactor
  *= require_self
  *= require_tree .

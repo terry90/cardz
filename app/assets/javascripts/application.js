@@ -15,8 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require cocoon
-//= require kube
 //= require uikit/uikit
 //= require uikit/grid
+//= require uikit/notify
 //= require redactor
 //= require_tree .
