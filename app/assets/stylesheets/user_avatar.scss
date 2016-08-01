@@ -1,0 +1,54 @@
+.user-menu {
+  float: right;
+  height: 40px;
+  margin: 20px 20px;
+  cursor: pointer;
+  position: relative;
+
+  .user-avatar {
+    max-height:100%;
+    border-radius: 50%;
+  }
+
+  .user-name {
+    color: white;
+  }
+
+  .user-dropdown {
+    width: 400px;
+    border-radius: 4px;
+
+    .menu {
+      a:hover {
+        background-color: transparent;
+      }
+
+      li {
+        position: relative;
+        font-size: 1.3em;
+        font-weight: bold;
+        padding: 6px 10px 6px 20px;
+        margin: 20px 10px 20px -20px;
+        color: #555;
+        background-color: #999;
+        text-shadow: 0 1px 2px #bbb;
+        -webkit-box-shadow: 0 2px 4px #888;
+        -moz-box-shadow: 0 2px 4px #888;
+        box-shadow: 0 2px 4px #888;
+      }
+
+      li:after
+      {
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 100%;
+        border-width: 5px 10px;
+        border-style: solid;
+        border-color: #666 #666 transparent transparent;
+      }
+    }
+  }
+}

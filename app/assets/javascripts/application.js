@@ -18,5 +18,6 @@
 //= require uikit/uikit
 //= require uikit/grid
 //= require uikit/notify
+//= require uikit/dropdown
 //= require redactor
 //= require_tree .
