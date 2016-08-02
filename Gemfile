@@ -64,6 +64,10 @@ gem 'font-awesome-rails'
 # Auto-prefixer
 gem 'autoprefixer-rails'
 
+# Awesome user notifs
+gem 'user_notif'
+
+
 group :staging do
   gem 'recipient_interceptor'
 end

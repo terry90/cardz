@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  put '/user_notif/:id', to: 'user_notif/notifs#read', as: :read_user_notif
   devise_for :users, controllers: { confirmations: 'users/confirmations',
                                     registrations: 'users/registrations' }
 

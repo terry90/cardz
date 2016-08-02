@@ -20,4 +20,5 @@
 //= require uikit/notify
 //= require uikit/dropdown
 //= require redactor
+//= require user_notif
 //= require_tree .
