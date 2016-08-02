@@ -82,3 +82,4 @@ en:
         email: "Email: %{email}"
         change: "(change)"
   sign_out: "Sign out"
+  my_account: "My account"
