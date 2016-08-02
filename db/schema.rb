@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728100419) do
+ActiveRecord::Schema.define(version: 20160802135323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,20 @@ ActiveRecord::Schema.define(version: 20160728100419) do
     t.index ["business_id"], name: "index_locations_on_business_id", using: :btree
     t.index ["lat"], name: "index_locations_on_lat", using: :btree
     t.index ["lng"], name: "index_locations_on_lng", using: :btree
+  end
+
+  create_table "notifs", force: :cascade do |t|
+    t.string   "target_type",                 null: false
+    t.integer  "target_id",                   null: false
+    t.boolean  "sticky",      default: false
+    t.integer  "user_id"
+    t.boolean  "unread",      default: true
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["target_type", "target_id"], name: "index_notifs_on_target_type_and_target_id", using: :btree
+    t.index ["unread"], name: "index_notifs_on_unread", using: :btree
+    t.index ["user_id"], name: "index_notifs_on_user_id", using: :btree
   end
 
   create_table "offer_reductions", force: :cascade do |t|
@@ -97,6 +111,8 @@ ActiveRecord::Schema.define(version: 20160728100419) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.date     "birthday"
+    t.string   "country"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

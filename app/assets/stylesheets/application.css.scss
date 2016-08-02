@@ -11,9 +11,11 @@
  * It is generally better to create a new file per style scope.
  *
  *= require normalize-rails
- *= require uikit/uikit.css
- *= require uikit/notify.css
+ *= require uikit/uikit
+ *= require uikit/notify
+ *= require uikit/progress
  *= require redactor
+ *= require user_notif
  *= require_self
  *= require_tree .
  */

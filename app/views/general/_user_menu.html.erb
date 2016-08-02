@@ -15,6 +15,7 @@
 
       <div class="uk-width-2-3 notifications">
         <div class="uk-panel">
+          <%= list_user_notifs(current_user.notifs.includes(:target).order(sticky: :desc, unread: :desc, id: :desc).limit(5)) %>
         </div>
       </div>
     </div>
