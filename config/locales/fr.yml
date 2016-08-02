@@ -55,3 +55,4 @@ fr:
         email: "Email : %{email}"
         change: "(changer)"
   sign_out: "Déconnexion"
+  my_account: "Mon compte"

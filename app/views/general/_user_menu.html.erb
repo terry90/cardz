@@ -1,6 +1,6 @@
 <div class="user-menu" data-uk-dropdown="{mode:'click', pos:'bottom-right'}">
   <%= image_tag 'default/user_avatar.png', class: 'user-avatar' %>
-  <span class="user-name space-l">Bishop</span>
+  <span class="user-name space-l"><%= current_user.first_name || t('my_account') %></span>
 
   <div class="uk-dropdown user-dropdown">
 
