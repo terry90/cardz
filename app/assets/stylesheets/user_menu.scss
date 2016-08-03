@@ -6,8 +6,20 @@
   position: relative;
 
   .user-avatar {
-    max-height:100%;
-    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    height: inherit;
+
+    img {
+      max-height:100%;
+      border-radius: 50%;
+    }
+
+    .notif-badge {
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+    }
   }
 
   .user-name {
