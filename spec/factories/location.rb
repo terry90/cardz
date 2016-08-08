@@ -2,7 +2,9 @@ FactoryGirl.define do
   factory :location do
     lat { Faker::Address.latitude }
     lng { Faker::Address.longitude }
-    name { Faker::Address.city }
-    business
+    sequence :name do |i|
+      "#{Faker::Address.city} - #{i}"
+    end
+    business_id { create(:business).id }
   end
 end
