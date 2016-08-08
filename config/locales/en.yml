@@ -52,6 +52,11 @@ en:
         city: 'City'
         phone_number: 'Phone number'
     errors:
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Cannot delete record because a dependent %{record} exists"
+          has_many: "Cannot delete record because dependent %{record} exist"
       models:
         user:
           attributes:

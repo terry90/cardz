@@ -2,6 +2,9 @@ class Card < ApplicationRecord
   belongs_to :user
   belongs_to :location
 
+  validates_presence_of :location
+  validates_presence_of :uid
+
   before_create :generate_uid
 
   private

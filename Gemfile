@@ -62,6 +62,7 @@ end
 group :development, :test do
   # Testing framework
   gem 'rspec-rails', '= 3.5.0.beta4'
+  gem 'rails-controller-testing'
   # Automatic rspec -- BEGIN
   gem 'rspec-core', '= 3.5.0.beta4'
   gem 'rspec', '= 3.5.0.beta4'
