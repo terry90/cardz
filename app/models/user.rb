@@ -14,6 +14,10 @@ class User < ApplicationRecord
 
   after_create :add_complete_notif
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   # We ask the password only after email confirmation (progressive engagement)
   def password_required?
     super if confirmed?
