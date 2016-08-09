@@ -28,9 +28,6 @@ Rails.application.routes.draw do
 
   root 'home#index', as: :root
 
-  post '/user/preform', to: 'users#preform', as: :user_preform
-  post '/user/check_cards', to: 'users#check_card', as: :user_check_card
-
   require 'sidekiq/web'
 
   # TODO: Change autorizations
