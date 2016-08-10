@@ -137,6 +137,8 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
+    let!(:user) { create(:user, cards: [card]) }
+
     it 'destroys the requested user' do
       expect {
         delete :destroy, params: {id: user.to_param}, session: valid_session
@@ -148,5 +150,4 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to(users_url)
     end
   end
-
 end

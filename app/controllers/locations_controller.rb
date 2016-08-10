@@ -81,6 +81,6 @@ class LocationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def location_params
-    params.fetch(:location, {}  ).permit(:formatted_name)
+    params.fetch(:location, {}  ).permit(:business_id, :lat, :lng, :name, :formatted_name)
   end
 end
