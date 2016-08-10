@@ -5,5 +5,6 @@ class Business < ApplicationRecord
   has_attached_file :cover, styles: { big: '1200x600', medium: '800x400>', small: '400x200>' }, default_url: 'default/business_cover.png'
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/, size: { in: 0..2.megabytes }
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/, size: { in: 0..1.megabytes }
-  validates_uniqueness_of :name
+
+  validates :name, presence: true, uniqueness: true
 end
