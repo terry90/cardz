@@ -1,3 +1,6 @@
+# A Business is the entity managing one or several Location.
+#
+# It should at least have a (unique) name.
 class Business < ApplicationRecord
   has_many :locations
 

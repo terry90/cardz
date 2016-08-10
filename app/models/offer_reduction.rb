@@ -1,3 +1,6 @@
+# An offer reduction represents a reduction offered by a Location.
+#
+# It is identified through a unique identifier: :uid.
 class OfferReduction < ApplicationRecord
   belongs_to :location
 

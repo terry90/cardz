@@ -1,3 +1,4 @@
+# A User is .. a user :)
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -12,12 +13,14 @@ class User < ApplicationRecord
 
   after_create :add_complete_notif
 
-  # We ask the password only after email confirmation (progressive engagement)
+  # Wether or not the password is required.
+  #
+  # Only after account confirmation.
   def password_required?
     super if confirmed?
   end
 
-  # Linked to progressive engagement (See confirmations_controller)
+  # Linked to progressive engagement (See ConfirmationsController)
   def password_match?
     self.errors[:password] << 'can\'t be blank' if password.blank?
     self.errors[:password_confirmation] << 'can\'t be blank' if password_confirmation.blank?
@@ -25,12 +28,14 @@ class User < ApplicationRecord
     password == password_confirmation && !password.blank?
   end
 
+  # Returns the user profile completion percentage
   def completion_percentage
     fields = %w(first_name last_name address postal_code city country birthday phone_number avatar.present? )
     sum_add = 100.0 / fields.count
     fields.inject(0) { |sum, field| sum + (field.split('.').inject(self) { |us, o| us.send(o) }.blank? ? 0 : sum_add) }.round.to_i
   end
 
+  # Returns the user offers ordered by location
   def offer_by_locations
     offers = {}
     self.cards.each do |card|
@@ -39,12 +44,14 @@ class User < ApplicationRecord
     offers
   end
 
+  # Sends a devise notification
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end
 
   private
 
+  # Creates the UserProfileCompletionNotif
   def add_complete_notif
     UserFormProgressNotif.create(user: self, target: self, sticky: true, unread: true)
   end
