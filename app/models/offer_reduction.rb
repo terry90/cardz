@@ -7,5 +7,6 @@ class OfferReduction < ApplicationRecord
   has_attached_file :cover, styles: { big: '1200x600', medium: '800x400>', small: '400x200>' }, default_url: 'default/offer_reduction_cover.png'
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/, size: { in: 0..2.megabytes }
 
-  validates_presence_of :name, :uid
+  validates_presence_of :name
+  validates :uid, presence: true, uniqueness: true
 end
