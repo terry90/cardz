@@ -33,11 +33,12 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  config.include Devise::TestHelpers, type: :controller
-  config.include Devise::TestHelpers, type: :view
-  config.include Warden::Test::Helpers
-  #config.infer_base_class_for_anonymous_controllers = false
-  #config.infer_spec_type_from_file_location!
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.infer_base_class_for_anonymous_controllers = false
+  config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = false
   config.render_views
 end
+
+Capybara.javascript_driver = :webkit
+

@@ -40,7 +40,7 @@ gem 'redis', '~> 3.0'
 # gem 'capistrano-rails', group: :development
 
 # Authentication
-gem 'devise', '~> 4.1.1'
+gem 'devise', '~> 4.2.0'
 gem 'devise-i18n'
 
 # Async Jobs
@@ -76,6 +76,8 @@ group :development, :test do
   # Testing framework
   gem 'rspec-rails', '= 3.5.0.beta4'
   gem 'rails-controller-testing'
+  # Javascript driver
+  gem 'capybara-webkit', '>= 1.2.0'
   # Clean database after spec
   gem 'database_cleaner'
   # Automatic rspec -- BEGIN

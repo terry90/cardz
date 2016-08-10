@@ -1,6 +1,12 @@
 FactoryGirl.define do
   factory :user do
-    email 'test@cardz.com'
+    after(:create) do |u|
+      u.confirm
+    end
+
+    sequence :email do |i|
+      "test-#{i}@cardz.com"
+    end
     first_name 'Ganesh'
     last_name 'Desfleurs'
     password 'grospassworddefou'

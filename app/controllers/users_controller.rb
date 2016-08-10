@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_user_has_rights, except: [:preform, :check_card, :check_credentials]
+  before_action :ensure_user_has_rights, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -26,8 +26,15 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
+      if params[:user][:cards_attributes]
+        cards = []
+        params[:user][:cards_attributes].each do |_, v|
+          card = Card.where(uid: v[:uid]).first
+          cards << card if card && v[:_destroy] == 'false'
+        end
+        @user.cards = cards.uniq
+      end
       if @user.save
         format.html { redirect_to @user, notice: t('user.create.success') }
         format.json { render :show, status: :created, location: @user }
@@ -43,12 +50,14 @@ class UsersController < ApplicationController
   #TODO: Multi cards handling
   def update
     respond_to do |format|
-      cards = []
-      params[:user][:cards_attributes].each do |_, v|
-        card = Card.where(uid: v[:uid]).first
-        cards << card if card && v[:_destroy] == 'false'
+      if params[:user][:cards_attributes]
+        cards = []
+        params[:user][:cards_attributes].each do |_, v|
+          card = Card.where(uid: v[:uid]).first
+          cards << card if card && v[:_destroy] == 'false'
+        end
+        @user.cards = cards.uniq
       end
-      @user.cards = cards.uniq
       if @user.update(user_params)
         format.html { redirect_to @user, notice: t('user.update.success') }
         format.json { render :show, status: :ok, location: @user }
@@ -98,7 +107,7 @@ class UsersController < ApplicationController
   private
 
   def ensure_user_has_rights
-    redirect_to root_path unless current_user && current_user == @user
+    redirect_to root_path unless current_user
   end
 
   # Use callbacks to share common setup or constraints between actions.
