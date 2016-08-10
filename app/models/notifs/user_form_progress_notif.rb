@@ -1,5 +1,6 @@
 # This notification show the user profile completion percentage.
 class UserFormProgressNotif < UserNotif::Notif
+  # Fields used to calculate the user profile completion percentage
   FIELDS = %w(first_name last_name address birthday country postal_code avatar.present? city phone_number)
 
   # Wether or not the notif should send an email at its creation
