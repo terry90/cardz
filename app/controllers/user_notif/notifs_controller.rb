@@ -1,3 +1,4 @@
+# User notif module
 module UserNotif
   # Handles requests about user notifs
   class NotifsController < ApplicationController

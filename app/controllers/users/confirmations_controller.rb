@@ -2,11 +2,13 @@
 #
 # It overrides Devise controller to customize its behaviour
 class Users::ConfirmationsController < Devise::ConfirmationsController
+  # Devise code
   def show
     self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token]) if params[:confirmation_token].present?
     super if resource.nil? or resource.confirmed?
   end
 
+  # Devise code
   def confirm
     self.resource = resource_class.find_by_confirmation_token(params[resource_name][:confirmation_token]) if params[resource_name][:confirmation_token].present?
     if resource.update_attributes(permitted_params) && resource.password_match?
