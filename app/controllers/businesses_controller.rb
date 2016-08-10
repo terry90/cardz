@@ -1,27 +1,43 @@
+# Handles the requests about businesses
 class BusinessesController < ApplicationController
   before_action :set_business, only: [:show, :edit, :update, :destroy]
 
+  # Lists all existing businesses
+  #
   # GET /businesses
+  #
   # GET /businesses.json
   def index
     @businesses = Business.all
   end
 
+  # Displays details of a business
+  #
   # GET /businesses/1
+  #
   # GET /businesses/1.json
   def show
   end
 
+  # Displays a form to create a new business
+  #
   # GET /businesses/new
   def new
     @business = Business.new
   end
 
+  # Displays a form to edit an existing business
+  #
   # GET /businesses/1/edit
   def edit
   end
 
+  # Creates a new business from params
+  #
+  # Authorized parameters: :name
+  #
   # POST /businesses
+  #
   # POST /businesses.json
   def create
     @business = Business.new(business_params)
@@ -37,7 +53,12 @@ class BusinessesController < ApplicationController
     end
   end
 
+  # Updates an existing business from params
+  #
+  # Authorized parameters: :name
+  #
   # PATCH/PUT /businesses/1
+  #
   # PATCH/PUT /businesses/1.json
   def update
     respond_to do |format|
@@ -51,7 +72,10 @@ class BusinessesController < ApplicationController
     end
   end
 
+  # Destroys an existing business according to the :id parameter
+  #
   # DELETE /businesses/1
+  #
   # DELETE /businesses/1.json
   def destroy
     @business.destroy
@@ -62,12 +86,12 @@ class BusinessesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Sets the business object required by the action
     def set_business
       @business = Business.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Filters the permitted params
     def business_params
       params.fetch(:business, {}).permit(:name)
     end

@@ -1,27 +1,43 @@
+# Handles requests about locations
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :inline_update, :destroy]
 
+  # Lists all locations
+  #
   # GET /locations
+  #
   # GET /locations.json
   def index
     @locations = Location.all
   end
 
+  # Displays details of a location
+  #
   # GET /locations/1
+  #
   # GET /locations/1.json
   def show
   end
 
+  # Display a form to create a new location
+  #
   # GET /locations/new
   def new
     @location = Location.new
   end
 
+  # Display a form to edit an existing location
+  #
   # GET /locations/1/edit
   def edit
   end
 
+  # Creates a new location from params
+  #
+  # Authorized parameters: :business_id, :lat, :lng, :name, :formatted_name
+  #
   # POST /locations
+  #
   # POST /locations.json
   def create
     @location = Location.new(location_params)
@@ -37,7 +53,12 @@ class LocationsController < ApplicationController
     end
   end
 
+  # Update an existing location from params
+  #
+  # Authorized parameters: :business_id, :lat, :lng, :name, :formatted_name
+  #
   # PATCH/PUT /locations/1
+  #
   # PATCH/PUT /locations/1.json
   def update
     respond_to do |format|
@@ -51,8 +72,13 @@ class LocationsController < ApplicationController
     end
   end
 
-  # POST /locations/1/inline_update
+  # Updates the location from inline form
+  #
   # Should only called in AJAX
+  #
+  # TODO: Really needed ? Maybe update can be used
+  #
+  # POST /locations/1/inline_update
   def inline_update
     respond_to do |format|
       if @location.update(location_params)
@@ -63,7 +89,10 @@ class LocationsController < ApplicationController
     end
   end
 
+  # Destroys a location
+  #
   # DELETE /locations/1
+  #
   # DELETE /locations/1.json
   def destroy
     @location.destroy
@@ -74,12 +103,12 @@ class LocationsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+  # Sets the location object required by the action
   def set_location
     @location = Location.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Filters the permitted params
   def location_params
     params.fetch(:location, {}  ).permit(:business_id, :lat, :lng, :name, :formatted_name)
   end

@@ -1,27 +1,43 @@
+# Handles the requests about cards
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
+  # Lists all existing cards
+  #
   # GET /cards
+  #
   # GET /cards.json
   def index
     @cards = Card.all
   end
 
+  # Display details of a card
+  #
   # GET /cards/1
+  #
   # GET /cards/1.json
   def show
   end
 
+  # Display a form to create a new card
+  #
   # GET /cards/new
   def new
     @card = Card.new
   end
 
+  # Display a form to edit an existing card
+  #
   # GET /cards/1/edit
   def edit
   end
 
+  # Creates a new card from params
+  #
+  # Authorized parameters: :uid, :user_id, :location_id
+  #
   # POST /cards
+  #
   # POST /cards.json
   def create
     @card = Card.new(card_params)
@@ -37,7 +53,12 @@ class CardsController < ApplicationController
     end
   end
 
+  # Updates an existing card from params
+  #
+  # Authorized parameters: :uid, :user_id, :location_id
+  #
   # PATCH/PUT /cards/1
+  #
   # PATCH/PUT /cards/1.json
   def update
     respond_to do |format|
@@ -51,7 +72,10 @@ class CardsController < ApplicationController
     end
   end
 
+  # Destroys a card
+  #
   # DELETE /cards/1
+  #
   # DELETE /cards/1.json
   def destroy
     @card.destroy
@@ -62,12 +86,12 @@ class CardsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Sets the card object required by the action
     def set_card
       @card = Card.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Filters the permitted params
     def card_params
       params.fetch(:card, {}).permit(:uid, :user_id, :location_id)
     end

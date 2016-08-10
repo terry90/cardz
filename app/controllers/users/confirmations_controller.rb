@@ -1,3 +1,6 @@
+# Handles the requests about users confirmations
+#
+# It overrides Devise controller to customize its behaviour
 class Users::ConfirmationsController < Devise::ConfirmationsController
   def show
     self.resource = resource_class.find_by_confirmation_token(params[:confirmation_token]) if params[:confirmation_token].present?
@@ -17,6 +20,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
   private
 
+  # Filters the permitted params
   def permitted_params
     params.require(resource_name).permit(:confirmation_token, :password, :password_confirmation)
   end

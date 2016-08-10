@@ -1,3 +1,4 @@
+# Handles the requests about users passwords
 class Users::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
   # def new

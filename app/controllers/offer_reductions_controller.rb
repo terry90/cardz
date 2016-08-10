@@ -1,6 +1,9 @@
+# Handles requests about offer reductions
 class OfferReductionsController < ApplicationController
   before_action :set_offer_reduction, only: [:show, :edit, :update, :destroy]
 
+  # Lists all the offer reductions
+  #
   # GET /offer_reductions
   # GET /offer_reductions.json
   def index
@@ -8,20 +11,30 @@ class OfferReductionsController < ApplicationController
     @offer_reductions = @location ? @location.offer_reductions : OfferReduction.all
   end
 
+  # Displays details of an offer reduction
+  #
   # GET /offer_reductions/1
   # GET /offer_reductions/1.json
   def show
   end
 
+  # Display a form to create a new offer reduction
+  #
   # GET /offer_reductions/new
   def new
     @offer_reduction = OfferReduction.new
   end
 
+  # Display a form to edit an existing offer reduction
+  #
   # GET /offer_reductions/1/edit
   def edit
   end
 
+  # Creates a new offer reduction from params
+  #
+  # Authorized parameters: :name, :percent, :uid, :location_id, :description, :title
+  #
   # POST /offer_reductions
   # POST /offer_reductions.json
   def create
@@ -38,6 +51,10 @@ class OfferReductionsController < ApplicationController
     end
   end
 
+  # Updates an existing offer reduction from params
+  #
+  # Authorized parameters: :name, :percent, :uid, :location_id, :description, :title
+  #
   # PATCH/PUT /offer_reductions/1
   # PATCH/PUT /offer_reductions/1.json
   def update
@@ -52,6 +69,8 @@ class OfferReductionsController < ApplicationController
     end
   end
 
+  # Destroy an offer reduction
+  #
   # DELETE /offer_reductions/1
   # DELETE /offer_reductions/1.json
   def destroy
@@ -63,13 +82,13 @@ class OfferReductionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_offer_reduction
-      @offer_reduction = OfferReduction.find(params[:id])
-    end
+  # Sets the offer reduction object required by the action
+  def set_offer_reduction
+    @offer_reduction = OfferReduction.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def offer_reduction_params
-      params.require(:offer_reduction).permit(:name, :percent, :uid, :location_id, :description, :title)
-    end
+  # Filters the permitted params
+  def offer_reduction_params
+    params.require(:offer_reduction).permit(:name, :percent, :uid, :location_id, :description, :title)
+  end
 end
