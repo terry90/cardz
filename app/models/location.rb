@@ -6,5 +6,5 @@ class Location < ApplicationRecord
   has_many :offer_reductions
   has_many :cards
 
-  validates_presence_of :name, :lng, :lat, :business_id
+  validates_presence_of :name, :lng, :lat
 end

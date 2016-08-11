@@ -4,10 +4,9 @@
 #
 # It is identified through a unique identifier: :uid.
 class Card < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :location
 
-  validates_presence_of :location
   validates_uniqueness_of :uid, case_sensitive: false
   validates :uid, presence: true, format: /\A[a-zA-Z0-9]{6,}\z/
 
