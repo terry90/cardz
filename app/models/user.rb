@@ -9,15 +9,17 @@ class User < ApplicationRecord
   has_many :notifs, class_name: 'UserNotif::Notif'
   has_many :cards
   accepts_nested_attributes_for :cards
+
   validates_presence_of :cards
+  validates :email, presence: true, uniqueness: true
 
   after_create :add_complete_notif
 
-  # Wether or not the password is required.
+  # Whether or not the password is required.
   #
   # Only after account confirmation.
   def password_required?
-    super if confirmed?
+    confirmed? ? super : false
   end
 
   # Linked to progressive engagement (See ConfirmationsController)
@@ -28,6 +30,11 @@ class User < ApplicationRecord
     password == password_confirmation && !password.blank?
   end
 
+  # Returns the user full name
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   # Returns the user profile completion percentage
   def completion_percentage
     fields = %w(first_name last_name address postal_code city country birthday phone_number avatar.present? )
@@ -36,7 +43,7 @@ class User < ApplicationRecord
   end
 
   # Returns the user offers ordered by location
-  def offer_by_locations
+  def offers_by_location
     offers = {}
     self.cards.each do |card|
       offers[card.location.name] = card.location.offer_reductions

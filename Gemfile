@@ -80,6 +80,8 @@ group :development, :test do
   gem 'capybara-webkit', '>= 1.2.0'
   # Clean database after spec
   gem 'database_cleaner'
+  # Testing matchers
+  gem 'shoulda-matchers'
   # Automatic rspec -- BEGIN
   gem 'rspec-core', '= 3.5.0.beta4'
   gem 'rspec', '= 3.5.0.beta4'
