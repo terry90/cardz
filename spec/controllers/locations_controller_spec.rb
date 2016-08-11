@@ -14,8 +14,7 @@ RSpec.describe LocationsController, type: :controller do
 
   let(:valid_session) { {} }
 
-  let(:card) { create(:card) }
-  let(:user) { create(:user, cards: [card]) }
+  let(:user) { create(:user) }
   let(:location) { create(:location) }
 
   before do

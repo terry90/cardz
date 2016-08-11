@@ -25,7 +25,7 @@ RSpec.describe UsersController, type: :controller do
   let(:valid_session) { {} }
 
   let(:card) { create(:card) }
-  let(:user) { create(:user, cards: [card]) }
+  let(:user) { create(:user) }
 
   before do
     sign_in user
@@ -137,7 +137,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let!(:user) { create(:user, cards: [card]) }
+    let!(:user) { create(:user) }
 
     it 'destroys the requested user' do
       expect {

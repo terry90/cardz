@@ -13,8 +13,7 @@ RSpec.describe OfferReductionsController, type: :controller do
 
   let(:valid_session) { {} }
 
-  let(:card) { create(:card) }
-  let(:user) { create(:user, cards: [card]) }
+  let(:user) { create(:user) }
 
   let(:offer_reduction) { create(:offer_reduction) }
 

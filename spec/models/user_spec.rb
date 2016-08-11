@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { create(:user) }
+  let(:user) { build(:user) }
 
   it 'has a valid factory' do
     expect(build(:user)).to be_valid
@@ -89,6 +89,7 @@ RSpec.describe User, type: :model do
 
   describe '#add_complete_notif' do
     it 'should create a new notif for user' do
+      user.save
       expect { user.send(:add_complete_notif) }.to change { user.notifs.count }.by 1
     end
 
