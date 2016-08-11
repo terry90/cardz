@@ -8,7 +8,8 @@ class Card < ApplicationRecord
   belongs_to :location
 
   validates_presence_of :location
-  validates_presence_of :uid
+  validates_uniqueness_of :uid, case_sensitive: false
+  validates :uid, presence: true, format: /\A[a-zA-Z0-9]{6,}\z/
 
   before_create :generate_uid
 
