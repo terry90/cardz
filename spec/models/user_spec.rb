@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:card) { create(:card) }
-  let(:user) { create(:user, cards: [card]) }
+  let(:user) { create(:user) }
 
-  it 'has a valid factory (adding a card)' do
-    expect(build(:user, cards: [card])).to be_valid
+  it 'has a valid factory' do
+    expect(build(:user)).to be_valid
   end
 
   describe 'ActiveModel validations' do
@@ -81,8 +80,9 @@ RSpec.describe User, type: :model do
     end
 
     it 'should have as many key as cards user owns' do
+      user.cards = [build(:card)]
       expect(user.offers_by_location.count).to eq 1
-      user.cards = [card, build(:card)]
+      user.cards << build(:card)
       expect(user.offers_by_location.count).to eq 2
     end
   end
@@ -93,7 +93,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should be called at user creation' do
-      new_user = build(:user, cards: [card])
+      new_user = build(:user)
       expect(new_user).to receive(:add_complete_notif)
       new_user.save
     end

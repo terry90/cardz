@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
-    after(:create) do |u|
-      u.confirm
+    before(:create) do |u|
+      u.skip_confirmation!
     end
 
     sequence :email do |i|
@@ -15,5 +15,6 @@ FactoryGirl.define do
     city 'Paris'
     phone_number '0982619256'
     birthday Date.today - (Random.rand(30) + 18).years - Random.rand(365).days
+    cards { [create(:card)] }
   end
 end

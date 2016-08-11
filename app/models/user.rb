@@ -51,11 +51,6 @@ class User < ApplicationRecord
     offers
   end
 
-  # Sends a devise notification
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
-  end
-
   private
 
   # Creates the UserProfileCompletionNotif
