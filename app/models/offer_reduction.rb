@@ -8,5 +8,6 @@ class OfferReduction < ApplicationRecord
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/, size: { in: 0..2.megabytes }
 
   validates_presence_of :name
-  validates :uid, presence: true, uniqueness: true
+  validates_uniqueness_of :uid, case_sensitive: false
+  validates :uid, presence: true, format: /\A[a-zA-Z0-9]{6,}\z/
 end
