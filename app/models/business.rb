@@ -9,5 +9,6 @@ class Business < ApplicationRecord
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/, size: { in: 0..2.megabytes }
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/, size: { in: 0..1.megabytes }
 
-  validates :name, presence: true, uniqueness: true
+  validates_presence_of :name
+  validates_uniqueness_of :name, case_sensitive: false
 end
