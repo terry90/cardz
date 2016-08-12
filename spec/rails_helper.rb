@@ -39,7 +39,6 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
   config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = false
-  config.render_views
 
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|
@@ -48,6 +47,5 @@ RSpec.configure do |config|
     end
   end
 end
-
 Capybara.javascript_driver = :webkit
 
