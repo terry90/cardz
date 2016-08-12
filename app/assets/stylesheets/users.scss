@@ -1,3 +1,116 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$green: #5DCC75;
+$gray: #777575;
+$gray_alpha: rgba(119, 117, 117, 0.5);
+
+.profile-progress-bar {
+  .desc {
+    margin-bottom: 5px;
+  }
+
+  .uk-progress-mini {
+    overflow: hidden;
+    border-radius: 3px;
+    border: $gray_alpha solid 0.5px;
+    box-shadow: 1px 1px 1px $gray_alpha;
+  }
+
+  .uk-progress-bar {
+    background-color: $green;
+  }
+}
+
+.edit_user {
+  color: $gray;
+
+  h3 {
+    color: $gray;
+  }
+
+  .fieldset {
+    width: 100%;
+    clear: both;
+  }
+
+  .field {
+    float: left;
+    margin-right: 20px;
+    width: 200px;
+
+    label {
+      font-size: 16px;
+      margin-bottom: 5px
+    }
+
+    input {
+      width: 100%;
+      padding-left: 5px;
+      height: 24px;
+      line-height: 24px;
+      border-radius: 3px;
+      border: 0.5px solid $gray;
+      box-shadow: $gray_alpha 0 1px 1px;
+    }
+  }
+
+  .avatar {
+    position: relative;
+    text-align: center;
+
+    .upload-button {
+      position: absolute;
+
+      input[type="file"] {
+        display: none;
+      }
+    }
+
+    .avatar-image {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      height: 200px;
+      width: 200px;
+      margin: auto;
+      border-radius: 50%;
+
+      img {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        //TODO: Change
+        max-height: 2000px;
+        max-width: 2000px;
+        position: absolute;
+      }
+    }
+  }
+
+  .input-button {
+    color: white;
+    box-shadow: $gray_alpha 1px 1px 1px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 0;
+    background: $green;
+    display: inline-block;
+  }
+
+  .input-button:hover {
+    cursor: pointer;
+    background-color: $green;
+  }
+
+  .input-button:active {
+    cursor: pointer;
+    background-color: $green;
+  }
+
+  .title-icon {
+    height: 24px;
+    margin-right: 5px;
+  }
+}

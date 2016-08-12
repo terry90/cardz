@@ -147,6 +147,6 @@ class UsersController < ApplicationController
   # Filter the permitted params
   def user_params
     params.fetch(:user, {}).permit(:email, :first_name, :last_name, :address,
-                                   :postal_code, :city, :phone_number)
+                                   :postal_code, :city, :phone_number, :avatar)
   end
 end

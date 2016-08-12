@@ -61,3 +61,6 @@ fr:
         change: "(changer)"
   sign_out: "Déconnexion"
   my_account: "Mon compte"
+  simple_form:
+    file:
+      title: "Choisir un fichier"

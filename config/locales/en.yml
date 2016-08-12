@@ -83,3 +83,6 @@ en:
         change: "(change)"
   sign_out: "Sign out"
   my_account: "My account"
+  simple_form:
+    file:
+      title: "Choose a file"

@@ -1,0 +1,6 @@
+<div class="profile-progress-bar">
+  <p class="desc"><%= t('user.show.completion', percentage: @user.completion_percentage) %></p>
+  <div class="uk-progress-mini">
+    <div class="uk-progress-bar" style="width: <%= @user.completion_percentage %>%;"></div>
+  </div>
+</div>
