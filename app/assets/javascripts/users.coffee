@@ -14,6 +14,9 @@ makeBackgroundCover = (div) ->
       'width': 'auto'
     )
 
+loadImage = ->
+  makeBackgroundCover('.avatar-image')
+
 $ ->
   $('.upload-button input').change( ->
     preview = document.querySelector('.avatar-image img')
@@ -27,8 +30,8 @@ $ ->
       reader.readAsDataURL file
   )
 
-  $('.avatar-image').click( ->
+  $('.avatar-image img').click( ->
     $('.upload-button input').click()
   )
 
-  makeBackgroundCover('.avatar-image')
+$(document).on('turbolinks:load', loadImage);
