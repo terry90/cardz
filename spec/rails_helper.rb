@@ -24,6 +24,23 @@ require 'rspec/rails'
 #
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
+if ENV.fetch('COVERAGE', false)
+  require 'simplecov'
+  SimpleCov.at_exit do
+    Dir.mkdir('coverage') unless Dir.exist?('coverage')
+    File.open('coverage/raw_coverage', 'w+').write(SimpleCov.result.covered_percent.to_s + "\n")
+    SimpleCov.result.format!
+
+    SimpleCov.add_group 'Controllers', 'app/controllers'
+    SimpleCov.add_group 'Models', 'app/models'
+    SimpleCov.add_group 'Views', 'app/views'
+    SimpleCov.add_group 'Mailers', 'app/mailers'
+    SimpleCov.add_group 'Helpers', 'app/helpers'
+    SimpleCov.add_group 'Libraries', 'lib'
+  end
+  SimpleCov.start 'rails'
+end
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|

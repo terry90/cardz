@@ -95,6 +95,9 @@ group :development, :test do
   gem 'guard-rspec', '~> 4.7', require: false
   # ------------------ END
 
+  # Coverage
+  gem 'simplecov'
+
   # Fixtures
   gem 'factory_girl_rails', '~> 4.7'
   # Env variables
