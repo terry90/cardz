@@ -25,7 +25,7 @@ RSpec.describe UsersController, type: :controller do
   let(:valid_session) { {} }
 
   let(:card) { create(:card) }
-  let(:user) { create(:user) }
+  let(:user) { create(:user, password: 'password') }
 
   before do
     sign_in user
@@ -148,6 +148,54 @@ RSpec.describe UsersController, type: :controller do
     it 'redirects to the users list' do
       delete :destroy, params: {id: user.to_param}, session: valid_session
       expect(response).to redirect_to(users_url)
+    end
+  end
+
+  describe 'POST #preform' do
+    context 'with unknown email' do
+      it 'should render the form card uid view' do
+        post :preform, email: ''
+        expect(response).to render_template('users/_form_card_uid')
+      end
+    end
+
+    context 'with known email' do
+      it 'should render the form password view' do
+        post :preform, email: user.email
+        expect(response).to render_template('users/_form_password')
+      end
+    end
+  end
+
+  describe 'POST #check_card' do
+    context 'with valid card number' do
+      it 'should respond ok' do
+        post :check_card, card: card.uid
+        expect(response).to be_ok
+      end
+    end
+
+    context 'with invalid card number' do
+      it 'should respond forbidden' do
+        post :check_card, card: ''
+        expect(response).to be_forbidden
+      end
+    end
+  end
+
+  describe 'POST #check_credentials' do
+    context 'with valid credentials' do
+      it 'should respond ok' do
+        post :check_credentials, email: user.email, password: 'password'
+        expect(response).to be_ok
+      end
+    end
+
+    context 'with invalid credentials' do
+      it 'should respond unauthorized' do
+        post :check_credentials, email: '', password: ''
+        expect(response).to be_unauthorized
+      end
     end
   end
 end
